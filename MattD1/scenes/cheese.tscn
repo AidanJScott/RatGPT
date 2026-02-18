@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cmlwfov2nobww"]
+
+[ext_resource type="Texture2D" uid="uid://bpjygbhege0ck" path="res://assets/cheese.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dmr001utb6niq" path="res://scripts/playableCheese.gd" id="1_gv6i6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gv6i6"]
+radius = 4.0
+
+[sub_resource type="Environment" id="Environment_gv6i6"]
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.5
+
+[node name="Cheese" type="CharacterBody2D" unique_id=1668176232]
+collision_layer = 4
+script = ExtResource("1_gv6i6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777371967]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1702002591]
+shape = SubResource("CircleShape2D_gv6i6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1614829953]
+environment = SubResource("Environment_gv6i6")
