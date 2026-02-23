@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bm65nvdnfg30d"]
+
+[ext_resource type="PackedScene" uid="uid://dtwr7c60ctivk" path="res://aidan/scenes/maze.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://od3e6yms63da" path="res://aidan/scripts/movement_manager.gd" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://b5yexprdtwtqk" path="res://aidan/scenes/rat.tscn" id="3_lnu2h"]
+
+[node name="game" type="Node2D" unique_id=756957811]
+
+[node name="maze" parent="." unique_id=510141747 instance=ExtResource("1_uwrxv")]
+
+[node name="movement_manager" type="Node" parent="." unique_id=1312025294]
+script = ExtResource("2_yqjtg")
+
+[node name="rat" parent="." unique_id=661724722 instance=ExtResource("3_lnu2h")]
+position = Vector2(62, 1020)

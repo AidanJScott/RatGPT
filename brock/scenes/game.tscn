@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://t4dvhwkyuvib"]
+
+[ext_resource type="Texture2D" uid="uid://c5xwd3po87kmb" path="res://assets/maze_tileset.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://o7fhu8dyhedt" path="res://scenes/rat.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bi4nb36kbpy0s" path="res://scenes/cheese.tscn" id="3_lnu2h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwrxv"]
+texture = ExtResource("1_uwrxv")
+texture_region_size = Vector2i(10, 10)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.9594965, -5, -3.8579712, 5, -5, 5)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.9594965, -5, -3.8579712, 5, -5, 5)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-3.5533943, -4.061022, 5, -3.9594963, 5, -5, -3.8579712, -5)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.9594965, -5, -3.8579712, 5, -5, 5)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(3.8579702, -5, 5, -5, 5, 5, 3.9594955, 5)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.9594965, -5, -3.8579712, 5, -5, 5)
+4:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(3.8579702, -5, 5, -5, 5, 5, 3.9594955, 5)
+4:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-3.5533943, -4.061022, 3.6549187, -3.9594965, 3.8579702, -5, -3.8579712, -5)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.9594965, -5, -3.8579712, 5, -5, 5)
+5:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(3.8579702, -5, 5, -5, 5, 5, 3.9594955, 5)
+5:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-3.5533943, -4.061022, 3.6549187, -3.9594965, 3.8579702, -5, -3.8579712, -5)
+5:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(-3.6104364, 4.126213, 3.8396707, 4.0115957, 3.8969789, 5, -3.782362, 5)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.9594965, -5, -4.0115967, -4.0115967, -5, -4.0115967)
+
+[sub_resource type="TileSet" id="TileSet_yqjtg"]
+tile_size = Vector2i(10, 10)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_uwrxv")
+
+[node name="game" type="Node2D" unique_id=1306909334]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=902751475]
+tile_set = SubResource("TileSet_yqjtg")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 131072, 1610612736, 131072, 131072, 0, 196608, 65536, 0, 262144, 65536, 0, 327680, 196608, 0, 393216, 196608, 0, 458752, 196608, 0, 524288, 65536, 0, 589824, 262144, 805306368, 1, 196608, 1342177280, 65537, 196608, 1342177280, 131073, 65536, 1342177280, 196609, 65536, 805306368, 262145, 65536, 805306368, 327681, 196608, 805306368, 393217, 196608, 805306368, 458753, 196608, 805306368, 524289, 65536, 805306368, 589825, 131072, 1610612736, 2, 65536, 1342177280, 65538, 0, 0, 131074, 0, 0, 196610, 65536, 0, 262146, 65536, 0, 327682, 65536, 0, 393218, 65536, 0, 458754, 131072, 1610612736, 524290, 262144, 0, 589826, 65536, 1610612736, 3, 65536, 1342177280, 65539, 0, 0, 131075, 0, 0, 196611, 0, 805306369, 262147, 65536, 805306368, 327683, 65536, 805306368, 393219, 0, 1342177281, 458755, 65536, 1610612736, 524291, 262144, 0, 589827, 65536, 1610612736, 4, 196608, 1342177280, 65540, 196608, 1342177280, 131076, 196608, 1342177280, 196612, 196608, 1342177280, 262148, 262144, 0, 327684, 131072, 1610612736, 393220, 65536, 1342177280, 458756, 0, 1610612737, 524292, 131072, 1610612736, 589828, 196608, 1610612736, 5, 196608, 1342177280, 65541, 196608, 1342177280, 131077, 196608, 1342177280, 196613, 196608, 1342177280, 262149, 262144, 0, 327685, 65536, 1610612736, 393221, 131072, 1342177280, 458757, 65536, 805306368, 524293, 65536, 1610612736, 589829, 262144, 1342177280, 6, 196608, 1342177280, 65542, 196608, 1342177280, 131078, 196608, 1342177280, 196614, 196608, 1342177280, 262150, 131072, 0, 327686, 0, 1610612737, 393222, 65536, 0, 458758, 65536, 0, 524294, 0, 1610612737, 589830, 131072, 1610612736, 7, 131072, 1342177280, 65543, 131072, 805306368, 131079, 196608, 1342177280, 196615, 196608, 1342177280, 262151, 262144, 1342177280, 327687, 131072, 1342177280, 393223, 0, 1342177281, 458759, 65536, 805306368, 524295, 65536, 805306368, 589831, 131072, 805306368, 8, 131072, 0, 65544, 196608, 0, 131080, 65536, 1610612736, 196616, 131072, 1342177280, 262152, 196608, 0, 327688, 262144, 805306368, 393224, 131072, 1342177280, 458760, 196608, 0, 524296, 196608, 0, 589832, 131072, 1610612736, 9, 131072, 1342177280, 65545, 196608, 0, 131081, 65536, 805306368, 196617, 196608, 0, 262153, 196608, 0, 327689, 196608, 0, 393225, 196608, 0, 458761, 196608, 0, 524297, 196608, 0, 589833, 131072, 805306368)
+
+[node name="Rat" parent="." unique_id=1274899593 instance=ExtResource("2_yqjtg")]
+unique_name_in_owner = true
+position = Vector2(96, 95)
+scale = Vector2(0.006, 0.006)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1667550377]
+position = Vector2(119, 67)
+zoom = Vector2(4.8, 4.8)
+
+[node name="cheese" parent="." unique_id=406911461 instance=ExtResource("3_lnu2h")]
+position = Vector2(74.00001, 45)
+scale = Vector2(0.007, 0.007)
+
+[node name="GUI" type="Control" parent="." unique_id=1711755340]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="right_weight_slider" type="VSlider" parent="GUI" unique_id=1042004547]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 11.0
+offset_right = 158.0
+offset_bottom = 84.0
+
+[node name="left_weight_slider" type="VSlider" parent="GUI" unique_id=270319673]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 11.0
+offset_right = 138.0
+offset_bottom = 84.0
+
+[node name="around_weight_slider" type="VSlider" parent="GUI" unique_id=99569680]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 11.0
+offset_right = 179.0
+offset_bottom = 84.0
+
+[node name="random_turn_chance" type="VSlider" parent="GUI" unique_id=421808972]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 11.0
+offset_right = 214.0
+offset_bottom = 84.0
+
+[node name="Label" type="Label" parent="GUI" unique_id=1311079466]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 86.00001
+offset_right = 199.0
+offset_bottom = 109.00001
+scale = Vector2(0.3712402, 0.3712402)
+text = "left weight"
+
+[node name="Label2" type="Label" parent="GUI" unique_id=527403028]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 91.0
+offset_right = 229.0
+offset_bottom = 114.0
+scale = Vector2(0.3712402, 0.3712402)
+text = "right weight"
+
+[node name="Label3" type="Label" parent="GUI" unique_id=1802440291]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 85.0
+offset_right = 255.0
+offset_bottom = 108.0
+scale = Vector2(0.3712402, 0.3712402)
+text = "back weight"
+
+[node name="Label4" type="Label" parent="GUI" unique_id=1186615048]
+layout_mode = 0
+offset_left = 196.00002
+offset_top = 84.0
+offset_right = 281.0
+offset_bottom = 159.0
+scale = Vector2(0.3712402, 0.3712402)
+text = "chance to
+turn at
+random"
+
+[connection signal="value_changed" from="GUI/right_weight_slider" to="Rat" method="_on_right_weight_slider_value_changed"]
+[connection signal="value_changed" from="GUI/left_weight_slider" to="Rat" method="_on_left_weight_slider_value_changed"]
+[connection signal="value_changed" from="GUI/around_weight_slider" to="Rat" method="_on_around_weight_slider_value_changed"]
+[connection signal="value_changed" from="GUI/random_turn_chance" to="Rat" method="_on_random_turn_chance_value_changed"]

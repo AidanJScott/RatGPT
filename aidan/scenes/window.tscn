@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://3hmsuvqi2evw"]
+
+[ext_resource type="Texture2D" uid="uid://b84yxu7h1p5ta" path="res://aidan/assets/window/frame.png" id="1_oya5r"]
+[ext_resource type="Texture2D" uid="uid://cy0mn7a48o2jd" path="res://aidan/assets/window/editor.png" id="2_to7fh"]
+[ext_resource type="Texture2D" uid="uid://csbpbpgdmyuap" path="res://aidan/assets/window/runbutton.png" id="3_qvkcj"]
+[ext_resource type="Texture2D" uid="uid://cmfs4v7yintbm" path="res://aidan/assets/window/selector.png" id="4_qnju7"]
+
+[sub_resource type="Theme" id="Theme_oya5r"]
+
+[node name="window" type="Node2D" unique_id=1832264529]
+
+[node name="editor" type="Sprite2D" parent="." unique_id=1202094414]
+position = Vector2(786, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_to7fh")
+
+[node name="frame" type="Sprite2D" parent="." unique_id=1751231064]
+scale = Vector2(2, 2)
+texture = ExtResource("1_oya5r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=928084841]
+offset_left = 522.0
+offset_top = -562.0
+offset_right = 1052.0
+offset_bottom = 570.0
+theme = SubResource("Theme_oya5r")
+
+[node name="run_button" type="Sprite2D" parent="." unique_id=917348358]
+position = Vector2(4, 535)
+scale = Vector2(2, 2)
+texture = ExtResource("3_qvkcj")
+
+[node name="selector" type="Sprite2D" parent="." unique_id=1995983010]
+position = Vector2(786, 418)
+scale = Vector2(2, 2)
+texture = ExtResource("4_qnju7")

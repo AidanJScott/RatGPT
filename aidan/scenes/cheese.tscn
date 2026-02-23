@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dntp3hrkfc1ea"]
+
+[ext_resource type="Texture2D" uid="uid://d15cqrm4knfft" path="res://aidan/assets/cheese.png" id="1_6ih6m"]
+
+[node name="cheese" type="Node2D" unique_id=87655480]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1072727016]
+texture = ExtResource("1_6ih6m")
