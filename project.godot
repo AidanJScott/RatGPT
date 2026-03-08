@@ -12,8 +12,12 @@ config_version=5
 
 config/name="RatGpt"
 run/main_scene="uid://bm65nvdnfg30d"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="RatGpt"
 
 [file_customization]
 

@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw3s5ii47f14o"]
+
+[ext_resource type="Script" uid="uid://bu1r0u4qolyfm" path="res://matt/scripts/main_menu.gd" id="1_axlm8"]
+[ext_resource type="Texture2D" uid="uid://bpjygbhege0ck" path="res://matt/assets/cheese.png" id="1_v8g82"]
+[ext_resource type="PackedScene" uid="uid://cbuu0gg7bcs0o" path="res://matt/scenes/fade_transition.tscn" id="3_q8hm2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twqol"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8g82"]
+bg_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaogb"]
+bg_color = Color(0.796243, 0.796243, 0.796243, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8g82"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axlm8")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cheese" type="Sprite2D" parent="."]
+position = Vector2(673.00525, 148.87305)
+rotation = 0.25830874
+scale = Vector2(0.053833503, 0.053041406)
+texture = ExtResource("1_v8g82")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.5
+offset_top = -178.75
+offset_right = 121.5
+offset_bottom = 178.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 90
+
+[node name="Label" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "RatGPT"
+
+[node name="Buttons" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="Start" type="Button" parent="VBox/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v8g82")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaogb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
+text = "Start"
+
+[node name="Options" type="Button" parent="VBox/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v8g82")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaogb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
+text = "Options
+"
+
+[node name="Exit" type="Button" parent="VBox/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v8g82")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaogb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
+text = "Exit"
+
+[node name="fade_transition" parent="." instance=ExtResource("3_q8hm2")]
+visible = false
+layout_mode = 0
+
+[node name="fade_timer" type="Timer" parent="fade_transition"]
+wait_time = 0.5
+
+[connection signal="pressed" from="VBox/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBox/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBox/Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

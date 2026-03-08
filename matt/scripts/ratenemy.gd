@@ -30,6 +30,7 @@ func _ready():
 func _on_body_entered(body):
 	if body == player:
 		print("Player touched enemy!")
+		get_tree().quit()
 
 # A* SETUP
 func setup_astar():
