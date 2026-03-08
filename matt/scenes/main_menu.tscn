@@ -62,7 +62,7 @@ grow_vertical = 2
 [node name="Cheese" type="Sprite2D" parent="."]
 position = Vector2(673.00525, 148.87305)
 rotation = 0.25830874
-scale = Vector2(0.053833503, 0.053041406)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_v8g82")
 
 [node name="VBox" type="VBoxContainer" parent="."]

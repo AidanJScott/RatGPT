@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=4 uid="uid://cqmh002rbcmuk"]
+[gd_scene load_steps=16 format=4 uid="uid://cqmh002rbcmuk"]
 
 [ext_resource type="Texture2D" uid="uid://bt7dw45ehsxci" path="res://matt/assets/Tiles/Cave Floors.png" id="1_6n2xs"]
 [ext_resource type="Texture2D" uid="uid://bvc4inn8uh8ae" path="res://matt/assets/Tiles/Cave Walls.png" id="2_l1kor"]
+[ext_resource type="Script" uid="uid://du1jhwahayrl3" path="res://matt/scripts/level_template.gd" id="3_34xh6"]
 [ext_resource type="PackedScene" uid="uid://yd016vw3xmxy" path="res://matt/scenes/ratenemy.tscn" id="3_l1kor"]
 [ext_resource type="PackedScene" uid="uid://cmlwfov2nobww" path="res://matt/scenes/cheese.tscn" id="4_7efph"]
+[ext_resource type="AudioStream" uid="uid://x20475iwcgpf" path="res://matt/assets/Audio/ding.mp3" id="4_lx66p"]
 [ext_resource type="Script" uid="uid://bi6tnhqlr7ruh" path="res://matt/scripts/exit.gd" id="5_2xh61"]
+[ext_resource type="AudioStream" uid="uid://drone0ab2pqxd" path="res://matt/assets/Audio/chomp.mp3" id="6_34xh6"]
 [ext_resource type="PackedScene" uid="uid://cbuu0gg7bcs0o" path="res://matt/scenes/fade_transition.tscn" id="6_87h5c"]
-[ext_resource type="Script" uid="uid://bysh8sr60jkyj" path="res://matt/scenes/fade_transition.gd" id="7_y2ojm"]
+[ext_resource type="Script" uid="uid://bysh8sr60jkyj" path="res://matt/scripts/fade_transition.gd" id="7_y2ojm"]
+[ext_resource type="PackedScene" uid="uid://ccppxcms2exev" path="res://matt/scenes/game_over.tscn" id="11_lx66p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7efph"]
 texture = ExtResource("1_6n2xs")
@@ -105,6 +109,10 @@ sources/1 = SubResource("TileSetAtlasSource_2xh61")
 [node name="TileMapLayer" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD9////AQAEAAEAAAD/////AQADAAEAAAABAP//AQABAAAAAAACAP//AQACAAAAAAACAAAAAQACAAEAAAACAAEAAQACAAEAAAAAAAIAAQAFAAIAAAAAAAEAAQAEAAAAAAD//wEAAQABAAMAAAD+/wEAAQABAAMAAAD9/wEAAQAAAAMAAAD+/wIAAQAFAAEAAAD+/wMAAQAEAAEAAAD7////AQAAAAAAAAD8////AQABAAAAAAAAAP//AQABAAAAAAD+////AQABAAEAAAD8/wAAAQABAAEAAAD8/wEAAQABAAEAAAD8/wIAAQABAAEAAAD8/wMAAQABAAMAAAD9/wIAAQABAAEAAAD//wIAAQABAAEAAAABAAEAAQABAAEAAAABAAIAAQABAAEAAAABAAMAAQABAAEAAAD9/wMAAQABAAMAAAD7/wMAAQAAAAEAAAD7/wAAAQAAAAEAAAD7/wEAAQAAAAEAAAD7/wIAAQAAAAEAAAAAAAMAAQABAAEAAAD//wMAAQABAAEAAAD//wQAAQABAAEAAAD+/wQAAQABAAEAAAD9/wQAAQABAAEAAAD8/wQAAQABAAEAAAABAAQAAQABAAEAAAABAAUAAQABAAEAAAACAAIAAQACAAEAAAACAAMAAQACAAEAAAACAAQAAQACAAEAAAACAAUAAQACAAEAAAACAAYAAQACAAEAAAAAAAQAAQAFAAAAAAAAAAUAAQAFAAEAAAABAAYAAQABAAEAAAAAAAYAAQAFAAEAAAD//wYAAQABAAEAAAD7/wQAAQAAAAEAAAD7/wUAAQAAAAEAAAD7/wYAAQAAAAEAAAD+/wYAAQABAAEAAAD9/wYAAQABAAEAAAD8/wYAAQABAAEAAAD8/wUAAQABAAEAAAD//wUAAQABAAMAAAD+/wUAAQABAAMAAAD9/wUAAQAAAAMAAAD8/wcAAQAEAAAAAAD9/wcAAQABAAEAAAD+/wcAAQADAAAAAAD//wcAAQABAAIAAAAAAAcAAQABAAIAAAABAAcAAQABAAIAAAACAAcAAQACAAIAAAD7/wcAAQAAAAIAAAD9/wgAAQAEAAMAAAD+/wgAAQACAAIAAAD8/wgAAQAAAAIAAAD+//7/AQAEAAIAAAD///7/AQACAAAAAAD9//7/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_avgnc")
+script = ExtResource("3_34xh6")
+
+[node name="LevelStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lx66p")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("tilemap", "player") instance=ExtResource("3_l1kor")]
 position = Vector2(-42, 40)
@@ -113,6 +121,10 @@ player = NodePath("../Cheese")
 
 [node name="Cheese" parent="." instance=ExtResource("4_7efph")]
 position = Vector2(-40, 123)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cheese"]
+position = Vector2(40, -123)
+stream = ExtResource("6_34xh6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-15, 50)
@@ -139,6 +151,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6745098)
 
-[node name="fade_transition" parent="." instance=ExtResource("6_87h5c")]
-visible = false
+[node name="fade_transition" parent="CanvasLayer" instance=ExtResource("6_87h5c")]
 script = ExtResource("7_y2ojm")
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("11_lx66p")]
+unique_name_in_owner = true
+visible = false

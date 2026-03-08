@@ -29,8 +29,10 @@ func _ready():
 	
 func _on_body_entered(body):
 	if body == player:
+		$AudioStreamPlayer2D.play()
+		$HitEffect/CPUParticles2D.emitting = true
 		print("Player touched enemy!")
-		get_tree().quit()
+		%GameOver.show()
 
 # A* SETUP
 func setup_astar():

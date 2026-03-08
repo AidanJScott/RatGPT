@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://yd016vw3xmxy"]
+[gd_scene load_steps=7 format=3 uid="uid://yd016vw3xmxy"]
 
 [ext_resource type="Script" uid="uid://bc5khnq1if7eh" path="res://matt/scripts/ratenemy.gd" id="1_hew3b"]
 [ext_resource type="Texture2D" uid="uid://cfnetd1rej0ja" path="res://matt/assets/rat.png" id="1_nk5l2"]
+[ext_resource type="AudioStream" uid="uid://ciyjv7rt2g7qk" path="res://matt/assets/Audio/gameover.mp3" id="3_vm4kh"]
+[ext_resource type="PackedScene" uid="uid://qi2gwqwwgvkv" path="res://matt/scenes/hit_effect.tscn" id="4_toasg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hew3b"]
 radius = 160.0
@@ -13,6 +15,9 @@ size = Vector2(700, 400)
 scale = Vector2(0.01, 0.01)
 collision_layer = 2
 script = ExtResource("1_hew3b")
+
+[node name="HitEffect" parent="." instance=ExtResource("4_toasg")]
+position = Vector2(250, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(250, 50)
@@ -27,3 +32,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_hew3b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vm4kh")
