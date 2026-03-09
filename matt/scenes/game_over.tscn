@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccppxcms2exev"]
+[gd_scene format=3 uid="uid://ccppxcms2exev"]
 
 [ext_resource type="Script" uid="uid://8thx47h0ns5f" path="res://matt/scenes/game_over.gd" id="1_7ncla"]
 [ext_resource type="PackedScene" uid="uid://cbuu0gg7bcs0o" path="res://matt/scenes/fade_transition.tscn" id="2_3ppg1"]

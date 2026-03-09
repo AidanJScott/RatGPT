@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbuu0gg7bcs0o"]
+[gd_scene format=3 uid="uid://cbuu0gg7bcs0o"]
 
 [sub_resource type="Animation" id="Animation_hj24j"]
 resource_name = "fade_in"

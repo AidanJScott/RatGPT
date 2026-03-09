@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c8rffbyjlvyer"]
+
+[ext_resource type="Texture2D" uid="uid://76vr3mq3ffm1" path="res://aidan/assets/editor/left.png" id="1_yix0u"]
+[ext_resource type="Script" uid="uid://bs70adoabxl7j" path="res://aidan/scripts/menu_block.gd" id="2_ynaog"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15mic"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0.9262248, 0.92622477, 0.92622477, 0)
+
+[node name="left_block" type="TextureRect" unique_id=245514825]
+custom_minimum_size = Vector2(192, 48)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_yix0u")
+expand_mode = 1
+script = ExtResource("2_ynaog")
+
+[node name="Panel" type="Panel" parent="." unique_id=317859906]
+show_behind_parent = true
+custom_minimum_size = Vector2(480, 120)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_15mic")

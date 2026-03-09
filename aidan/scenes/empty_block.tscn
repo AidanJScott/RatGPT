@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ckbif4kq6d7hb"]
+
+[ext_resource type="Script" uid="uid://chvi0fn3smaae" path="res://aidan/scripts/empty_block.gd" id="1_rdpq8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tn87"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.9262248, 0.92622477, 0.92622477, 0)
+
+[node name="empty_block" type="TextureRect" unique_id=74583904]
+custom_minimum_size = Vector2(192, 48)
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+script = ExtResource("1_rdpq8")
+
+[node name="Panel" type="Panel" parent="." unique_id=1380078552]
+show_behind_parent = true
+custom_minimum_size = Vector2(192, 48)
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3tn87")

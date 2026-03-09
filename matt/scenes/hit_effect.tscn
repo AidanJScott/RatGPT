@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://qi2gwqwwgvkv"]
+[gd_scene format=3 uid="uid://qi2gwqwwgvkv"]
 
 [ext_resource type="Script" uid="uid://douljc7mg3yo2" path="res://matt/scripts/hit_effect.gd" id="1_dhreo"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw3s5ii47f14o"]
+[gd_scene format=3 uid="uid://bw3s5ii47f14o"]
 
 [ext_resource type="Script" uid="uid://bu1r0u4qolyfm" path="res://matt/scripts/main_menu.gd" id="1_axlm8"]
 [ext_resource type="Texture2D" uid="uid://bpjygbhege0ck" path="res://matt/assets/cheese.png" id="1_v8g82"]

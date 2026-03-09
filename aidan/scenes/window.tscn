@@ -1,18 +1,53 @@
 [gd_scene format=3 uid="uid://3hmsuvqi2evw"]
 
+[ext_resource type="Script" uid="uid://dqquryc2ww3os" path="res://aidan/scripts/window.gd" id="1_8xjrb"]
 [ext_resource type="Texture2D" uid="uid://b84yxu7h1p5ta" path="res://aidan/assets/window/frame.png" id="1_oya5r"]
-[ext_resource type="Texture2D" uid="uid://cy0mn7a48o2jd" path="res://aidan/assets/window/editor.png" id="2_to7fh"]
+[ext_resource type="PackedScene" uid="uid://dwallwehm5p0y" path="res://aidan/scenes/editor.tscn" id="2_po37e"]
 [ext_resource type="Texture2D" uid="uid://csbpbpgdmyuap" path="res://aidan/assets/window/runbutton.png" id="3_qvkcj"]
-[ext_resource type="Texture2D" uid="uid://cmfs4v7yintbm" path="res://aidan/assets/window/selector.png" id="4_qnju7"]
+[ext_resource type="PackedScene" uid="uid://bbegj3gl0kfms" path="res://aidan/scenes/pause_menu.tscn" id="6_rqd1g"]
 
 [sub_resource type="Theme" id="Theme_oya5r"]
 
-[node name="window" type="Node2D" unique_id=1832264529]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6yl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[node name="editor" type="Sprite2D" parent="." unique_id=1202094414]
-position = Vector2(786, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("2_to7fh")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po37e"]
+bg_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xjrb"]
+bg_color = Color(0.796243, 0.796243, 0.796243, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rqd1g"]
+
+[node name="window" type="Node2D" unique_id=1832264529]
+script = ExtResource("1_8xjrb")
 
 [node name="frame" type="Sprite2D" parent="." unique_id=1751231064]
 scale = Vector2(2, 2)
@@ -30,7 +65,38 @@ position = Vector2(4, 535)
 scale = Vector2(2, 2)
 texture = ExtResource("3_qvkcj")
 
-[node name="selector" type="Sprite2D" parent="." unique_id=1995983010]
-position = Vector2(786, 418)
-scale = Vector2(2, 2)
-texture = ExtResource("4_qnju7")
+[node name="editor" parent="." unique_id=1472075260 instance=ExtResource("2_po37e")]
+
+[node name="pause" type="Button" parent="." unique_id=1781388697]
+offset_left = 1036.0
+offset_top = -629.0
+offset_right = 1131.0
+offset_bottom = -579.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wf6yl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_po37e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xjrb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wf6yl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rqd1g")
+text = "Pause"
+
+[node name="pause_menu" parent="." unique_id=806865130 instance=ExtResource("6_rqd1g")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -244.0
+offset_top = -266.0
+offset_right = -244.0
+offset_bottom = -266.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="pause" to="pause_menu" method="_on_pause_pressed"]
