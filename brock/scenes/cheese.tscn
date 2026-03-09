@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bi4nb36kbpy0s"]
 
-[ext_resource type="Texture2D" uid="uid://bcxa7ymit4mcf" path="res://assets/cheese.png" id="1_6ih6m"]
-[ext_resource type="Script" uid="uid://cgf3386ayrxpw" path="res://scripts/cheese.gd" id="1_gv6i6"]
-[ext_resource type="AudioStream" uid="uid://bn8v2x7d2goid" path="res://assets/mmm.mp3" id="3_xi2t1"]
+[ext_resource type="Texture2D" uid="uid://bcxa7ymit4mcf" path="res://brock/assets/cheese.png" id="1_6ih6m"]
+[ext_resource type="Script" uid="uid://cgf3386ayrxpw" path="res://brock/scripts/cheese.gd" id="1_gv6i6"]
+[ext_resource type="AudioStream" uid="uid://bn8v2x7d2goid" path="res://brock/assets/mmm.mp3" id="3_xi2t1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv6i6"]
 size = Vector2(881, 586)

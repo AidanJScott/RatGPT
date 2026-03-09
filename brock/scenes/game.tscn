@@ -1,8 +1,10 @@
-[gd_scene format=3 uid="uid://t4dvhwkyuvib"]
+[gd_scene load_steps=24 format=3 uid="uid://t4dvhwkyuvib"]
 
-[ext_resource type="Texture2D" uid="uid://c5xwd3po87kmb" path="res://assets/maze_tileset.png" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://o7fhu8dyhedt" path="res://scenes/rat.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bi4nb36kbpy0s" path="res://scenes/cheese.tscn" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://c5xwd3po87kmb" path="res://brock/assets/maze_tileset.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://o7fhu8dyhedt" path="res://brock/scenes/rat.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bi4nb36kbpy0s" path="res://brock/scenes/cheese.tscn" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://bvo5jos658tqd" path="res://brock/assets/grabber.png" id="4_co63u"]
+[ext_resource type="AudioStream" uid="uid://1kt7jbcajpfv" path="res://brock/assets/you_win.mp3" id="5_i5b1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwrxv"]
 texture = ExtResource("1_uwrxv")
@@ -33,97 +35,376 @@ tile_size = Vector2i(10, 10)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uwrxv")
 
-[node name="game" type="Node2D" unique_id=1306909334]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bid8l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
 
-[node name="TileMap" type="TileMap" parent="." unique_id=902751475]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e66i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2ofd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euuur"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co63u"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5b1a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ti8ph"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxpsd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt6va"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60tek"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvmrl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5t0w0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh6mw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poli4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jc1ah"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glj05"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="game" type="Node2D"]
+
+[node name="background" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = -19.0
+offset_right = 249.0
+offset_bottom = 146.0
+
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yqjtg")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 131072, 1610612736, 131072, 131072, 0, 196608, 65536, 0, 262144, 65536, 0, 327680, 196608, 0, 393216, 196608, 0, 458752, 196608, 0, 524288, 65536, 0, 589824, 262144, 805306368, 1, 196608, 1342177280, 65537, 196608, 1342177280, 131073, 65536, 1342177280, 196609, 65536, 805306368, 262145, 65536, 805306368, 327681, 196608, 805306368, 393217, 196608, 805306368, 458753, 196608, 805306368, 524289, 65536, 805306368, 589825, 131072, 1610612736, 2, 65536, 1342177280, 65538, 0, 0, 131074, 0, 0, 196610, 65536, 0, 262146, 65536, 0, 327682, 65536, 0, 393218, 65536, 0, 458754, 131072, 1610612736, 524290, 262144, 0, 589826, 65536, 1610612736, 3, 65536, 1342177280, 65539, 0, 0, 131075, 0, 0, 196611, 0, 805306369, 262147, 65536, 805306368, 327683, 65536, 805306368, 393219, 0, 1342177281, 458755, 65536, 1610612736, 524291, 262144, 0, 589827, 65536, 1610612736, 4, 196608, 1342177280, 65540, 196608, 1342177280, 131076, 196608, 1342177280, 196612, 196608, 1342177280, 262148, 262144, 0, 327684, 131072, 1610612736, 393220, 65536, 1342177280, 458756, 0, 1610612737, 524292, 131072, 1610612736, 589828, 196608, 1610612736, 5, 196608, 1342177280, 65541, 196608, 1342177280, 131077, 196608, 1342177280, 196613, 196608, 1342177280, 262149, 262144, 0, 327685, 65536, 1610612736, 393221, 131072, 1342177280, 458757, 65536, 805306368, 524293, 65536, 1610612736, 589829, 262144, 1342177280, 6, 196608, 1342177280, 65542, 196608, 1342177280, 131078, 196608, 1342177280, 196614, 196608, 1342177280, 262150, 131072, 0, 327686, 0, 1610612737, 393222, 65536, 0, 458758, 65536, 0, 524294, 0, 1610612737, 589830, 131072, 1610612736, 7, 131072, 1342177280, 65543, 131072, 805306368, 131079, 196608, 1342177280, 196615, 196608, 1342177280, 262151, 262144, 1342177280, 327687, 131072, 1342177280, 393223, 0, 1342177281, 458759, 65536, 805306368, 524295, 65536, 805306368, 589831, 131072, 805306368, 8, 131072, 0, 65544, 196608, 0, 131080, 65536, 1610612736, 196616, 131072, 1342177280, 262152, 196608, 0, 327688, 262144, 805306368, 393224, 131072, 1342177280, 458760, 196608, 0, 524296, 196608, 0, 589832, 131072, 1610612736, 9, 131072, 1342177280, 65545, 196608, 0, 131081, 65536, 805306368, 196617, 196608, 0, 262153, 196608, 0, 327689, 196608, 0, 393225, 196608, 0, 458761, 196608, 0, 524297, 196608, 0, 589833, 131072, 805306368)
 
-[node name="Rat" parent="." unique_id=1274899593 instance=ExtResource("2_yqjtg")]
+[node name="Rat" parent="." instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
 position = Vector2(96, 95)
 scale = Vector2(0.006, 0.006)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1667550377]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(119, 67)
 zoom = Vector2(4.8, 4.8)
 
-[node name="cheese" parent="." unique_id=406911461 instance=ExtResource("3_lnu2h")]
-position = Vector2(74.00001, 45)
+[node name="cheese" parent="." instance=ExtResource("3_lnu2h")]
+unique_name_in_owner = true
+position = Vector2(86.00001, 6.000004)
 scale = Vector2(0.007, 0.007)
 
-[node name="GUI" type="Control" parent="." unique_id=1711755340]
+[node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="right_weight_slider" type="VSlider" parent="GUI" unique_id=1042004547]
+[node name="right_weight_slider" type="VSlider" parent="GUI"]
 layout_mode = 0
-offset_left = 142.0
+offset_left = 134.0
 offset_top = 11.0
-offset_right = 158.0
+offset_right = 151.0
 offset_bottom = 84.0
+theme_override_icons/grabber = ExtResource("4_co63u")
+theme_override_icons/grabber_highlight = ExtResource("4_co63u")
+theme_override_styles/slider = SubResource("StyleBoxFlat_bid8l")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5e66i")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_e2ofd")
+value = 50.0
 
-[node name="left_weight_slider" type="VSlider" parent="GUI" unique_id=270319673]
+[node name="left_weight_slider" type="VSlider" parent="GUI"]
 layout_mode = 0
-offset_left = 122.0
+offset_left = 106.0
 offset_top = 11.0
-offset_right = 138.0
+offset_right = 123.0
 offset_bottom = 84.0
+theme_override_icons/grabber = ExtResource("4_co63u")
+theme_override_icons/grabber_highlight = ExtResource("4_co63u")
+theme_override_styles/slider = SubResource("StyleBoxFlat_euuur")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_co63u")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_i5b1a")
+value = 50.0
 
-[node name="around_weight_slider" type="VSlider" parent="GUI" unique_id=99569680]
+[node name="around_weight_slider" type="VSlider" parent="GUI"]
 layout_mode = 0
 offset_left = 163.0
 offset_top = 11.0
 offset_right = 179.0
 offset_bottom = 84.0
+theme_override_icons/grabber = ExtResource("4_co63u")
+theme_override_icons/grabber_highlight = ExtResource("4_co63u")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ti8ph")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pxpsd")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mt6va")
+value = 50.0
 
-[node name="random_turn_chance" type="VSlider" parent="GUI" unique_id=421808972]
+[node name="random_turn_chance" type="VSlider" parent="GUI"]
 layout_mode = 0
-offset_left = 198.0
+offset_left = 208.0
 offset_top = 11.0
-offset_right = 214.0
+offset_right = 225.0
 offset_bottom = 84.0
+theme_override_icons/grabber = ExtResource("4_co63u")
+theme_override_icons/grabber_highlight = ExtResource("4_co63u")
+theme_override_styles/slider = SubResource("StyleBoxFlat_60tek")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_cvmrl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5t0w0")
+value = 50.0
 
-[node name="Label" type="Label" parent="GUI" unique_id=1311079466]
+[node name="Label" type="Label" parent="GUI"]
 layout_mode = 0
-offset_left = 114.0
+offset_left = 109.0
 offset_top = 86.00001
-offset_right = 199.0
+offset_right = 194.0
 offset_bottom = 109.00001
 scale = Vector2(0.3712402, 0.3712402)
-text = "left weight"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "left"
 
-[node name="Label2" type="Label" parent="GUI" unique_id=527403028]
+[node name="Label2" type="Label" parent="GUI"]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 91.0
-offset_right = 229.0
-offset_bottom = 114.0
+offset_left = 136.0
+offset_top = 86.0
+offset_right = 232.0
+offset_bottom = 109.0
 scale = Vector2(0.3712402, 0.3712402)
-text = "right weight"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "right"
 
-[node name="Label3" type="Label" parent="GUI" unique_id=1802440291]
+[node name="Label3" type="Label" parent="GUI"]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 85.0
-offset_right = 255.0
-offset_bottom = 108.0
+offset_left = 165.0
+offset_top = 86.0
+offset_right = 261.0
+offset_bottom = 109.0
 scale = Vector2(0.3712402, 0.3712402)
-text = "back weight"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "back"
 
-[node name="Label4" type="Label" parent="GUI" unique_id=1186615048]
+[node name="Label4" type="Label" parent="GUI"]
 layout_mode = 0
-offset_left = 196.00002
-offset_top = 84.0
-offset_right = 281.0
-offset_bottom = 159.0
+offset_left = 205.00002
+offset_top = 87.0
+offset_right = 290.0
+offset_bottom = 162.0
 scale = Vector2(0.3712402, 0.3712402)
-text = "chance to
-turn at
-random"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "random"
+
+[node name="left_weight_number" type="Label" parent="GUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 108.00001
+offset_top = 98.00001
+offset_right = 193.0
+offset_bottom = 121.00001
+scale = Vector2(0.3712402, 0.3712402)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.50"
+
+[node name="right_weight_number" type="Label" parent="GUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 136.0
+offset_top = 98.0
+offset_right = 221.0
+offset_bottom = 121.0
+scale = Vector2(0.3712402, 0.3712402)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.50"
+
+[node name="back_weight_number" type="Label" parent="GUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 166.0
+offset_top = 98.0
+offset_right = 251.0
+offset_bottom = 121.0
+scale = Vector2(0.3712402, 0.3712402)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.50"
+
+[node name="random_turn_number" type="Label" parent="GUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 206.0
+offset_top = 99.0
+offset_right = 291.0
+offset_bottom = 122.0
+scale = Vector2(0.3712402, 0.3712402)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0100"
+
+[node name="Level_End" type="Control" parent="GUI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="ColorRect" parent="GUI/Level_End"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -19.0
+offset_right = 249.0
+offset_bottom = 146.0
+
+[node name="Label" type="Label" parent="GUI/Level_End"]
+layout_mode = 0
+offset_left = 13.0
+offset_right = 257.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 38
+text = "WELL DONE"
+
+[node name="Button" type="Button" parent="GUI/Level_End"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 90.0
+offset_right = 171.08334
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nh6mw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_poli4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jc1ah")
+theme_override_styles/focus = SubResource("StyleBoxFlat_glj05")
+text = "Next Level"
+
+[node name="VictorySFX" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_i5b1a")
 
 [connection signal="value_changed" from="GUI/right_weight_slider" to="Rat" method="_on_right_weight_slider_value_changed"]
 [connection signal="value_changed" from="GUI/left_weight_slider" to="Rat" method="_on_left_weight_slider_value_changed"]

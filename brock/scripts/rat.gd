@@ -2,17 +2,27 @@ extends Node2D
 
 const SPEED = 5
 var direction = "up"
-var right_weight = 0.0
-var left_weight = 0.0
-var around_weight = 0.0
-var chance_of_turning = 0.0
+var right_weight = 0.5
+var left_weight = 0.5
+var around_weight = 0.5
+var chance_of_turning = 0.01
 
 @onready var raycasts: Node2D = $raycasts
 @onready var forward_cast: RayCast2D = $raycasts/forward_cast
 @onready var left_cast: RayCast2D = $raycasts/left_cast
 @onready var right_cast: RayCast2D = $raycasts/right_cast
+@onready var left_weight_number = %left_weight_number
+@onready var right_weight_number = %right_weight_number
+@onready var back_weight_number = %back_weight_number
+@onready var random_turn_number = %random_turn_number
+@onready var cheese = %cheese
 
+func _ready():
+	cheese.cheesed.connect(cheese_collected)
 
+func cheese_collected():
+	%Level_End.visible = true
+	%VictorySFX.play()
 
 func _physics_process(delta):
 	if direction == "up":
@@ -104,15 +114,19 @@ func turn_around():
 
 func _on_right_weight_slider_value_changed(value: float) -> void:
 	right_weight = value/100.0
+	right_weight_number.text = "%.2f" % right_weight
 
 
 func _on_left_weight_slider_value_changed(value: float) -> void:
 	left_weight = value/100.0
+	left_weight_number.text = "%.2f" % left_weight
 
 
 func _on_around_weight_slider_value_changed(value: float) -> void:
 	around_weight = value/100.0
+	back_weight_number.text = "%.2f" % around_weight
 
 
 func _on_random_turn_chance_value_changed(value: float) -> void:
 	chance_of_turning = value/5000.0
+	random_turn_number.text = "%.4f" % chance_of_turning
