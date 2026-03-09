@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnsc7vkedmxq6"
-path="res://.godot/imported/cornerdot.png-8c3e89ac434acb71cc86106c1db8e54f.ctex"
+uid="uid://bp41q11o4kjq1"
+path="res://.godot/imported/cheese.png-e03e7b84da808d1ca5a284d6984d6b74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aidan/assets/maze/cornerdot.png"
-dest_files=["res://.godot/imported/cornerdot.png-8c3e89ac434acb71cc86106c1db8e54f.ctex"]
+source_file="res://assets/cheese.png"
+dest_files=["res://.godot/imported/cheese.png-e03e7b84da808d1ca5a284d6984d6b74.ctex"]
 
 [params]
 

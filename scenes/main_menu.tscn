@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://itptk4u3fbdt"]
+
+[ext_resource type="Script" uid="uid://k6hkl7ve0ppm" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://do8g3thqbm5yj" path="res://scenes/fade_transition.tscn" id="3_bqqt6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twqol"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8g82"]
+bg_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaogb"]
+bg_color = Color(0.796243, 0.796243, 0.796243, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8g82"]
+
+[node name="MainMenu" type="Control" unique_id=1423508845]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1674049683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cheese" type="Sprite2D" parent="." unique_id=1645996696]
+position = Vector2(673.00525, 148.87305)
+rotation = 0.25830874
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_bqqt6")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1549189466]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.5
+offset_top = -178.75
+offset_right = 121.5
+offset_bottom = 178.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 90
+
+[node name="Label" type="Label" parent="VBox" unique_id=527934956]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "RatGPT"
+
+[node name="Buttons" type="VBoxContainer" parent="VBox" unique_id=719383460]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="Start" type="Button" parent="VBox/Buttons" unique_id=1832674273]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v8g82")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaogb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
+text = "Start"
+
+[node name="Options" type="Button" parent="VBox/Buttons" unique_id=1796422778]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v8g82")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaogb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
+text = "Options
+"
+
+[node name="Exit" type="Button" parent="VBox/Buttons" unique_id=1124962649]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v8g82")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oaogb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
+text = "Exit"
+
+[node name="fade_transition" parent="." unique_id=2006009241 instance=ExtResource("3_bqqt6")]
+visible = false
+layout_mode = 0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=96970080]
+wait_time = 0.5
+
+[connection signal="pressed" from="VBox/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBox/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBox/Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

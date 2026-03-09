@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuyy381cf1vx1"
-path="res://.godot/imported/fourwall.png-f3d3960dcbb0909b937f52cbba25ffae.ctex"
+uid="uid://q3otpvtmd8oj"
+path="res://.godot/imported/cornerwall.png-e5738676e08bfde960c2cc4c8d4c99b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aidan/assets/maze/fourwall.png"
-dest_files=["res://.godot/imported/fourwall.png-f3d3960dcbb0909b937f52cbba25ffae.ctex"]
+source_file="res://assets/maze/cornerwall.png"
+dest_files=["res://.godot/imported/cornerwall.png-e5738676e08bfde960c2cc4c8d4c99b1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0eedsof3ncst"
-path="res://.godot/imported/backgroundspace.png-3a6139e8b7b33d9595f3ac93a3a29288.ctex"
+uid="uid://hkl0v5d760q1"
+path="res://.godot/imported/onewall.png-1242b1d098139d5e1252101073e620bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aidan/assets/maze/backgroundspace.png"
-dest_files=["res://.godot/imported/backgroundspace.png-3a6139e8b7b33d9595f3ac93a3a29288.ctex"]
+source_file="res://assets/maze/onewall.png"
+dest_files=["res://.godot/imported/onewall.png-1242b1d098139d5e1252101073e620bd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj1piy8chbwxm"
-path="res://.godot/imported/onewall.png-ff44390e644da4f0b79086848723ff88.ctex"
+uid="uid://lje6yueyq8vp"
+path="res://.godot/imported/gridspace.png-184e65c7277d1a60e61ffd009885f459.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aidan/assets/maze/onewall.png"
-dest_files=["res://.godot/imported/onewall.png-ff44390e644da4f0b79086848723ff88.ctex"]
+source_file="res://assets/maze/gridspace.png"
+dest_files=["res://.godot/imported/gridspace.png-184e65c7277d1a60e61ffd009885f459.ctex"]
 
 [params]
 
