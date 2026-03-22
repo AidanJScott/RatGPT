@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://bi6tnhqlr7ruh" path="res://matt/scripts/exit.gd" id="5_2xh61"]
 [ext_resource type="AudioStream" uid="uid://drone0ab2pqxd" path="res://matt/assets/Audio/chomp.mp3" id="6_34xh6"]
 [ext_resource type="PackedScene" uid="uid://cbuu0gg7bcs0o" path="res://matt/scenes/fade_transition.tscn" id="6_87h5c"]
-[ext_resource type="Script" uid="uid://bysh8sr60jkyj" path="res://matt/scripts/fade_transition.gd" id="7_y2ojm"]
-[ext_resource type="PackedScene" uid="uid://ccppxcms2exev" path="res://matt/scenes/game_over.tscn" id="11_lx66p"]
+[ext_resource type="Script" uid="uid://bysh8sr60jkyj" path="res://scripts/fade_transition.gd" id="7_y2ojm"]
+[ext_resource type="PackedScene" uid="uid://ccppxcms2exev" path="res://scenes/UI/game_over.tscn" id="11_lx66p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7efph"]
 texture = ExtResource("1_6n2xs")

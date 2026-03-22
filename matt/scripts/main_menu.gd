@@ -34,6 +34,6 @@ func _on_exit_pressed() -> void:
 
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start":
-		get_tree().change_scene_to_file("res://matt/scenes/LevelTemplate.tscn")
+		get_tree().change_scene_to_file("res://scenes/UI/level_select.tscn")
 	elif button_type == "options":
-		get_tree().change_scene_to_file("res://matt/scenes/OptionsMenu.tscn")
+		get_tree().change_scene_to_file("res://scenes/UI/OptionsMenu.tscn")

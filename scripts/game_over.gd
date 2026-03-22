@@ -12,4 +12,4 @@ func _on_start_pressed() -> void:
 	$ColorRect/fade_transition/AnimationPlayer.play("fade_in")
 
 func _on_fade_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://matt/scenes/LevelTemplate.tscn")
+	LevelManager._load_level(LevelManager.current_level)
