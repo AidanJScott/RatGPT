@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dntp3hrkfc1ea"]
+[gd_scene load_steps=5 format=3 uid="uid://dntp3hrkfc1ea"]
 
 [ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="1_6ih6m"]
 [ext_resource type="Script" uid="uid://b7romdmhbfj57" path="res://scripts/cheese.gd" id="1_gv6i6"]
@@ -6,6 +6,11 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xi2t1"]
 radius = 449.0
 height = 1474.0
+
+[sub_resource type="Environment" id="Environment_gv6i6"]
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.5
 
 [node name="cheese" type="Area2D"]
 script = ExtResource("1_gv6i6")
@@ -17,5 +22,8 @@ texture = ExtResource("1_6ih6m")
 position = Vector2(-31, -94)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_xi2t1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gv6i6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

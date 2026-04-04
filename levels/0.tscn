@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpjo43wgs41lp"]
+[gd_scene load_steps=4 format=3 uid="uid://cpjo43wgs41lp"]
 
 [ext_resource type="PackedScene" uid="uid://buh4rhiuhohri" path="res://scenes/maze.tscn" id="1_o6lbg"]
+[ext_resource type="PackedScene" uid="uid://dntp3hrkfc1ea" path="res://scenes/cheese.tscn" id="2_ej0t8"]
 [ext_resource type="PackedScene" uid="uid://b5yexprdtwtqk" path="res://aidan/scenes/rat.tscn" id="2_op5ms"]
 
 [node name="game" type="Node2D"]
 
 [node name="maze" parent="." instance=ExtResource("1_o6lbg")]
+
+[node name="cheese2" parent="maze" instance=ExtResource("2_ej0t8")]
+position = Vector2(186, 903)
+scale = Vector2(0.07, 0.07)
 
 [node name="rat" parent="." instance=ExtResource("2_op5ms")]
 position = Vector2(62, 1020)

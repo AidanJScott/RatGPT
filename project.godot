@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*res://scripts/level_manager.gd"
+EventBus="*res://scripts/EventBus.gd"
 
 [dotnet]
 
@@ -35,6 +36,10 @@ folder_colors={
 "res://scenes/": "green",
 "res://scripts/": "green"
 }
+
+[global_group]
+
+player=""
 
 [input]
 
