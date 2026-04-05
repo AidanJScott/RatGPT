@@ -13,4 +13,20 @@ position = Vector2(663.9999, 68)
 [node name="rat" parent="." unique_id=1987628345 instance=ExtResource("2_pkpa4")]
 position = Vector2(61, 1019)
 
+[node name="RightLabel" parent="rat/CharacterBody2D/Camera2D/window/editor" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260) index="4" unique_id=1707561056]
+visible = true
+
+[node name="LeftLabel" parent="rat/CharacterBody2D/Camera2D/window/editor" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260) index="5" unique_id=1190405010]
+visible = true
+
+[node name="RightSlider" parent="rat/CharacterBody2D/Camera2D/window/editor" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260) index="8" unique_id=963447553]
+visible = true
+
+[node name="LeftSlider" parent="rat/CharacterBody2D/Camera2D/window/editor" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260) index="9" unique_id=557175207]
+visible = true
+
 [editable path="maze"]
+[editable path="rat"]
+[editable path="rat/CharacterBody2D/Camera2D/window"]
+[editable path="rat/CharacterBody2D/Camera2D/window/editor"]
+[editable path="rat/CharacterBody2D/Camera2D/window/LevelTimer"]

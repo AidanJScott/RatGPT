@@ -54,6 +54,9 @@ func stop_move():
 	moving = false
 	
 func level_ends():
+	var m = int (level_timer.total_time_seconds / 60)
+	var s = level_timer.total_time_seconds - m * 60
+	$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
 	if level_timer.total_time_seconds > 20:
 		star_1.texture = preload("res://assets/empty_star.png")
 		star_2.texture = preload("res://assets/empty_star.png")

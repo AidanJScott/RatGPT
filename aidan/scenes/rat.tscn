@@ -105,9 +105,9 @@ offset_bottom = 650.0
 [node name="Label" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=2088001021]
 layout_mode = 0
 offset_left = -1019.0
-offset_top = -600.0
+offset_top = -751.0
 offset_right = 1265.0
-offset_bottom = -54.0
+offset_bottom = -205.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
@@ -133,20 +133,30 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_g0844")
 text = "Next Level"
 
 [node name="star1" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=336029538]
-position = Vector2(-350, 5.9999943)
+position = Vector2(-350, -173.3838)
 rotation = -0.31673843
 scale = Vector2(3.7999997, 3.7999997)
 texture = ExtResource("10_3242j")
 
 [node name="star2" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1638136684]
-position = Vector2(-32.00003, -47.999996)
+position = Vector2(-32.00003, -227.38379)
 scale = Vector2(3.7999997, 3.7999997)
 texture = ExtResource("10_3242j")
 
 [node name="star3" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=2064953227]
-position = Vector2(280.99997, -11.000013)
+position = Vector2(280.99997, -190.38382)
 rotation = 0.34986582
 scale = Vector2(3.7999997, 3.7999997)
 texture = ExtResource("10_3242j")
+
+[node name="timelabel" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=730422736]
+layout_mode = 0
+offset_left = -252.0
+offset_top = -46.0
+offset_right = 2032.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 194
+text = "00:00"
 
 [connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]

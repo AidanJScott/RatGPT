@@ -8,6 +8,9 @@ var target_position: Vector2
 var moving = false
 var move_direction = Vector2.ZERO
 @onready var up_slider: HSlider = $Camera2D/window/editor/UpSlider
+@onready var down_slider: HSlider = $Camera2D/window/editor/DownSlider
+@onready var right_slider: HSlider = $Camera2D/window/editor/RightSlider
+@onready var left_slider: HSlider = $Camera2D/window/editor/LeftSlider
 @onready var level_timer: Control = %LevelTimer
 @onready var star_1: Sprite2D = $Camera2D/Level_End/star1
 @onready var star_2: Sprite2D = $Camera2D/Level_End/star2
@@ -16,14 +19,23 @@ var move_direction = Vector2.ZERO
 func _physics_process(delta):
 
 	if not moving:
-		if Input.is_action_just_pressed("up"):
-			var rand = randi_range(0,100)
-			if rand < up_slider.value:
-				try_start_move(Vector2.UP)
-				animated_sprite_2d.play("up")
+		if Input.is_action_just_pressed("up") || Input.is_action_just_pressed("down") || Input.is_action_just_pressed("right") || Input.is_action_just_pressed("left"):
+			if right_slider.visible == false || randi_range(0,1) == 0:
+				var rand = randi_range(0,100)
+				if rand < up_slider.value:
+					try_start_move(Vector2.UP)
+					animated_sprite_2d.play("up")
+				elif rand < up_slider.value + down_slider.value:
+					try_start_move(Vector2.DOWN)
+					animated_sprite_2d.play("down")
 			else:
-				try_start_move(Vector2.DOWN)
-				animated_sprite_2d.play("down")
+				var rand = randi_range(0,100)
+				if rand < right_slider.value:
+					try_start_move(Vector2.RIGHT)
+					animated_sprite_2d.play("right")
+				elif rand < left_slider.value + right_slider.value:
+					try_start_move(Vector2.LEFT)
+					animated_sprite_2d.play("left")
 
 	if moving:
 		velocity = move_direction * SPEED
@@ -50,6 +62,9 @@ func stop_move():
 	moving = false
 
 func level_ends():
+	var m = int (level_timer.total_time_seconds / 60)
+	var s = level_timer.total_time_seconds - m * 60
+	$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
 	if level_timer.total_time_seconds > 20:
 		star_1.texture = preload("res://assets/empty_star.png")
 		star_2.texture = preload("res://assets/empty_star.png")

@@ -49,16 +49,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0g0h3"]
 radius = 49.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8t8v"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1krls"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw2kx"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bslw1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbnxy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvibj"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="rat" type="Node2D" unique_id=1987628345]
@@ -87,7 +87,7 @@ offset_top = -629.0
 offset_right = -1125.0
 offset_bottom = -629.0
 
-[node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=746110957]
+[node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=261956551]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -96,26 +96,26 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("9_1krls")
 
-[node name="background" type="ColorRect" parent="CharacterBody2D/Camera2D/Level_End" unique_id=142276583]
+[node name="background" type="ColorRect" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1852459670]
 layout_mode = 0
 offset_left = -1167.0
 offset_top = -661.0
 offset_right = 1160.0
 offset_bottom = 650.0
 
-[node name="Label" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1232008403]
+[node name="Label" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1399022162]
 layout_mode = 0
 offset_left = -1019.0
-offset_top = -600.0
+offset_top = -751.0
 offset_right = 1265.0
-offset_bottom = -54.0
+offset_bottom = -205.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/font_size = 350
 text = "WELL DONE"
 
-[node name="Button" type="Button" parent="CharacterBody2D/Camera2D/Level_End" unique_id=2087150815]
+[node name="Button" type="Button" parent="CharacterBody2D/Camera2D/Level_End" unique_id=297271694]
 layout_mode = 0
 offset_left = -694.0
 offset_top = 204.0
@@ -127,28 +127,38 @@ theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
 theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 280
-theme_override_styles/normal = SubResource("StyleBoxFlat_b8t8v")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1krls")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yw2kx")
-theme_override_styles/focus = SubResource("StyleBoxFlat_bslw1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw2kx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bslw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hbnxy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_uvibj")
 text = "Next Level"
 
-[node name="star1" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1566710664]
-position = Vector2(-350, 5.9999943)
+[node name="star1" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=134400075]
+position = Vector2(-350, -173.3838)
 rotation = -0.31673843
 scale = Vector2(3.7999997, 3.7999997)
 texture = ExtResource("10_yw2kx")
 
-[node name="star2" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1409390826]
-position = Vector2(-32.00003, -47.999996)
+[node name="star2" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1219351308]
+position = Vector2(-32.00003, -227.38379)
 scale = Vector2(3.7999997, 3.7999997)
 texture = ExtResource("10_yw2kx")
 
-[node name="star3" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1208461578]
-position = Vector2(280.99997, -11.000013)
+[node name="star3" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1399737981]
+position = Vector2(280.99997, -190.38382)
 rotation = 0.34986582
 scale = Vector2(3.7999997, 3.7999997)
 texture = ExtResource("10_yw2kx")
+
+[node name="timelabel" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1913902511]
+layout_mode = 0
+offset_left = -252.0
+offset_top = -46.0
+offset_right = 252.0
+offset_bottom = 222.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 194
+text = "00:00"
 
 [connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]
 
