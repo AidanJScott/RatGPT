@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://buvui1snotvkl"]
+
+[ext_resource type="Texture2D" uid="uid://cy0mn7a48o2jd" path="res://aidan/assets/window/editor.png" id="1_2qei2"]
+[ext_resource type="Script" uid="uid://xybj87t8gyjt" path="res://scripts/up_slider.gd" id="2_i6ys5"]
+[ext_resource type="Script" uid="uid://w0jdqn8tf01u" path="res://scripts/down_slider.gd" id="3_41acx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0vo2t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k33kk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dkuk0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rjjdg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vo2t"]
+content_margin_left = 4.0
+content_margin_top = 20.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k33kk"]
+content_margin_left = 4.0
+content_margin_top = 20.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.85882354, 0.85882354, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkuk0"]
+content_margin_left = 4.0
+content_margin_top = 20.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.85882354, 0.85882354, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[node name="editor" type="Node2D" unique_id=1472075260]
+
+[node name="editor_frame" type="Sprite2D" parent="." unique_id=755623557]
+position = Vector2(786, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_2qei2")
+
+[node name="instructions_background" type="Polygon2D" parent="." unique_id=2031185310]
+position = Vector2(4, -673)
+polygon = PackedVector2Array(547, 118, 1032, 120, 1014, 595, 542, 577)
+
+[node name="UpLabel" type="Label" parent="." unique_id=1257988385]
+offset_left = 604.0
+offset_top = -406.0
+offset_right = 674.0
+offset_bottom = -263.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 51
+text = "Up 50
+"
+
+[node name="DownLabel" type="Label" parent="." unique_id=1295186168]
+offset_left = 604.0
+offset_top = -304.0
+offset_right = 674.0
+offset_bottom = -161.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 51
+text = "Down 50"
+
+[node name="UpSlider" type="HSlider" parent="." unique_id=922042384]
+offset_left = 604.0
+offset_top = -336.0
+offset_right = 974.0
+offset_bottom = -308.0
+theme_override_icons/grabber = SubResource("CanvasTexture_0vo2t")
+theme_override_icons/grabber_highlight = SubResource("CanvasTexture_k33kk")
+theme_override_icons/grabber_disabled = SubResource("CanvasTexture_dkuk0")
+theme_override_icons/tick = SubResource("CanvasTexture_rjjdg")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0vo2t")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_k33kk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_dkuk0")
+value = 50.0
+script = ExtResource("2_i6ys5")
+
+[node name="DownSlider" type="HSlider" parent="." unique_id=394066468]
+offset_left = 604.0
+offset_top = -232.0
+offset_right = 974.0
+offset_bottom = -204.0
+theme_override_icons/grabber = SubResource("CanvasTexture_0vo2t")
+theme_override_icons/grabber_highlight = SubResource("CanvasTexture_k33kk")
+theme_override_icons/grabber_disabled = SubResource("CanvasTexture_dkuk0")
+theme_override_icons/tick = SubResource("CanvasTexture_rjjdg")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0vo2t")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_k33kk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_dkuk0")
+value = 50.0
+script = ExtResource("3_41acx")
+
+[connection signal="value_changed" from="UpSlider" to="UpSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="UpSlider" to="DownSlider" method="_on_up_slider_value_changed"]
+[connection signal="value_changed" from="DownSlider" to="UpSlider" method="_on_down_slider_value_changed"]
+[connection signal="value_changed" from="DownSlider" to="DownSlider" method="_on_value_changed"]

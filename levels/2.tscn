@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d0geltvf6j8hp"]
+
+[ext_resource type="PackedScene" uid="uid://buh4rhiuhohri" path="res://scenes/maze.tscn" id="1_tlvj4"]
+[ext_resource type="PackedScene" uid="uid://b52xovc3wfrta" path="res://scenes/slider_rat.tscn" id="2_tlvj4"]
+
+[node name="game" type="Node2D" unique_id=247817068]
+
+[node name="maze" parent="." unique_id=152593199 instance=ExtResource("1_tlvj4")]
+
+[node name="cheese" parent="maze" index="1"]
+position = Vector2(1255, 313)
+
+[node name="rat" parent="." unique_id=1987628345 instance=ExtResource("2_tlvj4")]
+position = Vector2(1260, 899)
+
+[editable path="maze"]

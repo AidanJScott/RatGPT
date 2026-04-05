@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://itptk4u3fbdt"]
+[gd_scene format=3 uid="uid://itptk4u3fbdt"]
 
 [ext_resource type="Script" uid="uid://k6hkl7ve0ppm" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="2_bqqt6"]
@@ -42,7 +42,7 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8g82"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1694226238]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqqt6")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1151091598]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,13 +59,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Cheese" type="Sprite2D" parent="."]
+[node name="Cheese" type="Sprite2D" parent="." unique_id=928261396]
 position = Vector2(673.00525, 148.87305)
 rotation = 0.25830874
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_bqqt6")
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="." unique_id=184269007]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,19 +80,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 90
 
-[node name="Label" type="Label" parent="VBox"]
+[node name="Label" type="Label" parent="VBox" unique_id=1672127022]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "RatGPT"
 
-[node name="Buttons" type="VBoxContainer" parent="VBox"]
+[node name="Buttons" type="VBoxContainer" parent="VBox" unique_id=163799480]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="Start" type="Button" parent="VBox/Buttons"]
+[node name="Start" type="Button" parent="VBox/Buttons" unique_id=442809709]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -109,7 +109,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
 text = "Start"
 
-[node name="Options" type="Button" parent="VBox/Buttons"]
+[node name="Options" type="Button" parent="VBox/Buttons" unique_id=2019690000]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -127,7 +127,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
 text = "Options
 "
 
-[node name="Exit" type="Button" parent="VBox/Buttons"]
+[node name="Exit" type="Button" parent="VBox/Buttons" unique_id=2050252800]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -144,11 +144,11 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_twqol")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v8g82")
 text = "Exit"
 
-[node name="fade_transition" parent="." instance=ExtResource("3_bqqt6")]
+[node name="fade_transition" parent="." unique_id=1285583537 instance=ExtResource("3_bqqt6")]
 visible = false
 layout_mode = 0
 
-[node name="fade_timer" type="Timer" parent="fade_transition"]
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=459319015]
 wait_time = 0.5
 
 [connection signal="pressed" from="VBox/Buttons/Start" to="." method="_on_start_pressed"]
