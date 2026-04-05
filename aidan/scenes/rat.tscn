@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5yexprdtwtqk"]
+[gd_scene format=3 uid="uid://b5yexprdtwtqk"]
 
 [ext_resource type="Texture2D" uid="uid://2qgpbchkrqtd" path="res://aidan/assets/rat/downrat.png" id="1_3csnj"]
 [ext_resource type="Script" uid="uid://cut2jb41cvssy" path="res://aidan/scripts/character_body_2d.gd" id="1_6s34g"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cpg0un8kfa21r" path="res://aidan/scripts/camera_2d.gd" id="6_6oj22"]
 [ext_resource type="PackedScene" uid="uid://3hmsuvqi2evw" path="res://aidan/scenes/window.tscn" id="6_368s2"]
 [ext_resource type="PackedScene" uid="uid://dk2mphmi52rfr" path="res://scenes/UI/level_timer.tscn" id="8_nsmht"]
+[ext_resource type="Script" uid="uid://whamkyofa0bd" path="res://scripts/level_end.gd" id="9_k07wv"]
+[ext_resource type="Texture2D" uid="uid://dwo4r500wdi17" path="res://assets/full_star.png" id="10_3242j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_po2hf"]
 animations = [{
@@ -47,27 +49,104 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0g0h3"]
 radius = 49.0
 
-[node name="rat" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8y73"]
+bg_color = Color(0, 0, 0, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8ajf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m242"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0844"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="rat" type="Node2D" unique_id=398345126]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2004362197 groups=["player"]]
 script = ExtResource("1_6s34g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=502824142]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_po2hf")
 animation = &"right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1048776437]
 shape = SubResource("CircleShape2D_0g0h3")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1581777149]
 zoom = Vector2(0.5, 0.5)
 script = ExtResource("6_6oj22")
 
-[node name="window" parent="CharacterBody2D/Camera2D" instance=ExtResource("6_368s2")]
+[node name="window" parent="CharacterBody2D/Camera2D" unique_id=1719022226 instance=ExtResource("6_368s2")]
 
-[node name="LevelTimer" parent="CharacterBody2D/Camera2D/window" instance=ExtResource("8_nsmht")]
+[node name="LevelTimer" parent="CharacterBody2D/Camera2D/window" unique_id=1355431833 instance=ExtResource("8_nsmht")]
 offset_left = -1128.0
 offset_top = -628.0
 offset_right = -1128.0
 offset_bottom = -628.0
+
+[node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=1031122849]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_k07wv")
+
+[node name="background" type="ColorRect" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1728548897]
+layout_mode = 0
+offset_left = -1167.0
+offset_top = -661.0
+offset_right = 1160.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=2088001021]
+layout_mode = 0
+offset_left = -1019.0
+offset_top = -600.0
+offset_right = 1265.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 350
+text = "WELL DONE"
+
+[node name="Button" type="Button" parent="CharacterBody2D/Camera2D/Level_End" unique_id=161428230]
+layout_mode = 0
+offset_left = -694.0
+offset_top = 204.0
+offset_right = 727.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 280
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8y73")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q8ajf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4m242")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g0844")
+text = "Next Level"
+
+[node name="star1" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=336029538]
+position = Vector2(-350, 5.9999943)
+rotation = -0.31673843
+scale = Vector2(3.7999997, 3.7999997)
+texture = ExtResource("10_3242j")
+
+[node name="star2" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1638136684]
+position = Vector2(-32.00003, -47.999996)
+scale = Vector2(3.7999997, 3.7999997)
+texture = ExtResource("10_3242j")
+
+[node name="star3" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=2064953227]
+position = Vector2(280.99997, -11.000013)
+rotation = 0.34986582
+scale = Vector2(3.7999997, 3.7999997)
+texture = ExtResource("10_3242j")
+
+[connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]

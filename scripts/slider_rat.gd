@@ -2,12 +2,16 @@ extends CharacterBody2D
 
 const SPEED = 600.0
 const GRID_UNIT = 120
-
+@onready var level_end: Control = %Level_End
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var target_position: Vector2
 var moving = false
 var move_direction = Vector2.ZERO
 @onready var up_slider: HSlider = $Camera2D/window/editor/UpSlider
+@onready var level_timer: Control = %LevelTimer
+@onready var star_1: Sprite2D = $Camera2D/Level_End/star1
+@onready var star_2: Sprite2D = $Camera2D/Level_End/star2
+@onready var star_3: Sprite2D = $Camera2D/Level_End/star3
 
 func _physics_process(delta):
 
@@ -44,3 +48,22 @@ func try_start_move(direction: Vector2):
 func stop_move():
 	velocity = Vector2.ZERO
 	moving = false
+
+func level_ends():
+	if level_timer.total_time_seconds > 20:
+		star_1.texture = preload("res://assets/empty_star.png")
+		star_2.texture = preload("res://assets/empty_star.png")
+		star_3.texture = preload("res://assets/empty_star.png")
+	elif level_timer.total_time_seconds > 10:
+		star_1.texture = preload("res://assets/full_star.png")
+		star_2.texture = preload("res://assets/empty_star.png")
+		star_3.texture = preload("res://assets/empty_star.png")
+	elif level_timer.total_time_seconds > 5:
+		star_1.texture = preload("res://assets/full_star.png")
+		star_2.texture = preload("res://assets/full_star.png")
+		star_3.texture = preload("res://assets/empty_star.png")
+	else:
+		star_1.texture = preload("res://assets/full_star.png")
+		star_2.texture = preload("res://assets/full_star.png")
+		star_3.texture = preload("res://assets/full_star.png")
+	level_end.visible = true

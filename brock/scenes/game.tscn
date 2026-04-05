@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://t4dvhwkyuvib"]
+[gd_scene format=3 uid="uid://t4dvhwkyuvib"]
 
 [ext_resource type="Texture2D" uid="uid://c5xwd3po87kmb" path="res://brock/assets/maze_tileset.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://o7fhu8dyhedt" path="res://brock/scenes/rat.tscn" id="2_yqjtg"]
@@ -191,40 +191,40 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glj05"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" unique_id=467411576]
 
-[node name="background" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="." unique_id=1364174252]
 offset_left = -17.0
 offset_top = -19.0
 offset_right = 249.0
 offset_bottom = 146.0
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=724504421]
 tile_set = SubResource("TileSet_yqjtg")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 131072, 1610612736, 131072, 131072, 0, 196608, 65536, 0, 262144, 65536, 0, 327680, 196608, 0, 393216, 196608, 0, 458752, 196608, 0, 524288, 65536, 0, 589824, 262144, 805306368, 1, 196608, 1342177280, 65537, 196608, 1342177280, 131073, 65536, 1342177280, 196609, 65536, 805306368, 262145, 65536, 805306368, 327681, 196608, 805306368, 393217, 196608, 805306368, 458753, 196608, 805306368, 524289, 65536, 805306368, 589825, 131072, 1610612736, 2, 65536, 1342177280, 65538, 0, 0, 131074, 0, 0, 196610, 65536, 0, 262146, 65536, 0, 327682, 65536, 0, 393218, 65536, 0, 458754, 131072, 1610612736, 524290, 262144, 0, 589826, 65536, 1610612736, 3, 65536, 1342177280, 65539, 0, 0, 131075, 0, 0, 196611, 0, 805306369, 262147, 65536, 805306368, 327683, 65536, 805306368, 393219, 0, 1342177281, 458755, 65536, 1610612736, 524291, 262144, 0, 589827, 65536, 1610612736, 4, 196608, 1342177280, 65540, 196608, 1342177280, 131076, 196608, 1342177280, 196612, 196608, 1342177280, 262148, 262144, 0, 327684, 131072, 1610612736, 393220, 65536, 1342177280, 458756, 0, 1610612737, 524292, 131072, 1610612736, 589828, 196608, 1610612736, 5, 196608, 1342177280, 65541, 196608, 1342177280, 131077, 196608, 1342177280, 196613, 196608, 1342177280, 262149, 262144, 0, 327685, 65536, 1610612736, 393221, 131072, 1342177280, 458757, 65536, 805306368, 524293, 65536, 1610612736, 589829, 262144, 1342177280, 6, 196608, 1342177280, 65542, 196608, 1342177280, 131078, 196608, 1342177280, 196614, 196608, 1342177280, 262150, 131072, 0, 327686, 0, 1610612737, 393222, 65536, 0, 458758, 65536, 0, 524294, 0, 1610612737, 589830, 131072, 1610612736, 7, 131072, 1342177280, 65543, 131072, 805306368, 131079, 196608, 1342177280, 196615, 196608, 1342177280, 262151, 262144, 1342177280, 327687, 131072, 1342177280, 393223, 0, 1342177281, 458759, 65536, 805306368, 524295, 65536, 805306368, 589831, 131072, 805306368, 8, 131072, 0, 65544, 196608, 0, 131080, 65536, 1610612736, 196616, 131072, 1342177280, 262152, 196608, 0, 327688, 262144, 805306368, 393224, 131072, 1342177280, 458760, 196608, 0, 524296, 196608, 0, 589832, 131072, 1610612736, 9, 131072, 1342177280, 65545, 196608, 0, 131081, 65536, 805306368, 196617, 196608, 0, 262153, 196608, 0, 327689, 196608, 0, 393225, 196608, 0, 458761, 196608, 0, 524297, 196608, 0, 589833, 131072, 805306368)
 
-[node name="Rat" parent="." instance=ExtResource("2_yqjtg")]
+[node name="Rat" parent="." unique_id=1023783161 instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
 position = Vector2(96, 95)
 scale = Vector2(0.006, 0.006)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2066663454]
 position = Vector2(119, 67)
 zoom = Vector2(4.8, 4.8)
 
-[node name="cheese" parent="." instance=ExtResource("3_lnu2h")]
+[node name="cheese" parent="." unique_id=154923719 instance=ExtResource("3_lnu2h")]
 unique_name_in_owner = true
 position = Vector2(86.00001, 6.000004)
 scale = Vector2(0.007, 0.007)
 
-[node name="GUI" type="Control" parent="."]
+[node name="GUI" type="Control" parent="." unique_id=1183580812]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="right_weight_slider" type="VSlider" parent="GUI"]
+[node name="right_weight_slider" type="VSlider" parent="GUI" unique_id=1606830313]
 layout_mode = 0
 offset_left = 134.0
 offset_top = 11.0
@@ -237,7 +237,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5e66i")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_e2ofd")
 value = 50.0
 
-[node name="left_weight_slider" type="VSlider" parent="GUI"]
+[node name="left_weight_slider" type="VSlider" parent="GUI" unique_id=2145879844]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 11.0
@@ -250,7 +250,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_co63u")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_i5b1a")
 value = 50.0
 
-[node name="around_weight_slider" type="VSlider" parent="GUI"]
+[node name="around_weight_slider" type="VSlider" parent="GUI" unique_id=1474704174]
 layout_mode = 0
 offset_left = 163.0
 offset_top = 11.0
@@ -263,7 +263,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_pxpsd")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mt6va")
 value = 50.0
 
-[node name="random_turn_chance" type="VSlider" parent="GUI"]
+[node name="random_turn_chance" type="VSlider" parent="GUI" unique_id=216598047]
 layout_mode = 0
 offset_left = 208.0
 offset_top = 11.0
@@ -276,7 +276,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_cvmrl")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5t0w0")
 value = 50.0
 
-[node name="Label" type="Label" parent="GUI"]
+[node name="Label" type="Label" parent="GUI" unique_id=1049843260]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 86.00001
@@ -286,7 +286,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "left"
 
-[node name="Label2" type="Label" parent="GUI"]
+[node name="Label2" type="Label" parent="GUI" unique_id=375962180]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 86.0
@@ -296,7 +296,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "right"
 
-[node name="Label3" type="Label" parent="GUI"]
+[node name="Label3" type="Label" parent="GUI" unique_id=539797514]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 86.0
@@ -306,7 +306,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "back"
 
-[node name="Label4" type="Label" parent="GUI"]
+[node name="Label4" type="Label" parent="GUI" unique_id=1735836916]
 layout_mode = 0
 offset_left = 205.00002
 offset_top = 87.0
@@ -316,7 +316,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "random"
 
-[node name="left_weight_number" type="Label" parent="GUI"]
+[node name="left_weight_number" type="Label" parent="GUI" unique_id=560301047]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 108.00001
@@ -327,7 +327,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.50"
 
-[node name="right_weight_number" type="Label" parent="GUI"]
+[node name="right_weight_number" type="Label" parent="GUI" unique_id=1748607865]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 136.0
@@ -338,7 +338,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.50"
 
-[node name="back_weight_number" type="Label" parent="GUI"]
+[node name="back_weight_number" type="Label" parent="GUI" unique_id=1473730440]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 166.0
@@ -349,7 +349,7 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.50"
 
-[node name="random_turn_number" type="Label" parent="GUI"]
+[node name="random_turn_number" type="Label" parent="GUI" unique_id=745329788]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 206.0
@@ -360,21 +360,20 @@ scale = Vector2(0.3712402, 0.3712402)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.0100"
 
-[node name="Level_End" type="Control" parent="GUI"]
+[node name="Level_End" type="Control" parent="GUI" unique_id=1429070628]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="background" type="ColorRect" parent="GUI/Level_End"]
+[node name="background" type="ColorRect" parent="GUI/Level_End" unique_id=115483781]
 layout_mode = 0
 offset_left = -17.0
 offset_top = -19.0
 offset_right = 249.0
 offset_bottom = 146.0
 
-[node name="Label" type="Label" parent="GUI/Level_End"]
+[node name="Label" type="Label" parent="GUI/Level_End" unique_id=1884465118]
 layout_mode = 0
 offset_left = 13.0
 offset_right = 257.0
@@ -385,7 +384,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 38
 text = "WELL DONE"
 
-[node name="Button" type="Button" parent="GUI/Level_End"]
+[node name="Button" type="Button" parent="GUI/Level_End" unique_id=793600271]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 90.0
@@ -402,7 +401,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jc1ah")
 theme_override_styles/focus = SubResource("StyleBoxFlat_glj05")
 text = "Next Level"
 
-[node name="VictorySFX" type="AudioStreamPlayer2D" parent="."]
+[node name="VictorySFX" type="AudioStreamPlayer2D" parent="." unique_id=456999103]
 unique_name_in_owner = true
 stream = ExtResource("5_i5b1a")
 

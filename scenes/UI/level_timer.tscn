@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk2mphmi52rfr"]
+[gd_scene format=3 uid="uid://dk2mphmi52rfr"]
 
 [ext_resource type="Script" uid="uid://dedcic2l06rm1" path="res://scripts/level_timer.gd" id="1_xvb8b"]
 
-[node name="LevelTimer" type="Control"]
+[node name="LevelTimer" type="Control" unique_id=1161824737]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xvb8b")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=944488905]
 layout_mode = 1
 offset_right = 82.0
 offset_bottom = 45.0
@@ -20,6 +20,6 @@ theme_override_font_sizes/font_size = 32
 text = "00m:00s"
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2087032054]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

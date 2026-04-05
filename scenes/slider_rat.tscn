@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cpg0un8kfa21r" path="res://aidan/scripts/camera_2d.gd" id="6_uvibj"]
 [ext_resource type="PackedScene" uid="uid://bm8sdfbww3mpr" path="res://scenes/UI/slider_window.tscn" id="7_b8t8v"]
 [ext_resource type="PackedScene" uid="uid://dk2mphmi52rfr" path="res://scenes/UI/level_timer.tscn" id="8_dgms3"]
+[ext_resource type="Script" uid="uid://whamkyofa0bd" path="res://scripts/level_end.gd" id="9_1krls"]
+[ext_resource type="Texture2D" uid="uid://dwo4r500wdi17" path="res://assets/full_star.png" id="10_yw2kx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_po2hf"]
 animations = [{
@@ -47,6 +49,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0g0h3"]
 radius = 49.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8t8v"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1krls"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw2kx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bslw1"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="rat" type="Node2D" unique_id=1987628345]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=564299011 groups=["player"]]
@@ -67,10 +81,77 @@ script = ExtResource("6_uvibj")
 [node name="window" parent="CharacterBody2D/Camera2D" unique_id=116094382 instance=ExtResource("7_b8t8v")]
 
 [node name="LevelTimer" parent="CharacterBody2D/Camera2D/window" unique_id=951175065 instance=ExtResource("8_dgms3")]
+unique_name_in_owner = true
 offset_left = -1125.0
 offset_top = -629.0
 offset_right = -1125.0
 offset_bottom = -629.0
 
+[node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=746110957]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_1krls")
+
+[node name="background" type="ColorRect" parent="CharacterBody2D/Camera2D/Level_End" unique_id=142276583]
+layout_mode = 0
+offset_left = -1167.0
+offset_top = -661.0
+offset_right = 1160.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1232008403]
+layout_mode = 0
+offset_left = -1019.0
+offset_top = -600.0
+offset_right = 1265.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 350
+text = "WELL DONE"
+
+[node name="Button" type="Button" parent="CharacterBody2D/Camera2D/Level_End" unique_id=2087150815]
+layout_mode = 0
+offset_left = -694.0
+offset_top = 204.0
+offset_right = 727.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 280
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8t8v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1krls")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw2kx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bslw1")
+text = "Next Level"
+
+[node name="star1" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1566710664]
+position = Vector2(-350, 5.9999943)
+rotation = -0.31673843
+scale = Vector2(3.7999997, 3.7999997)
+texture = ExtResource("10_yw2kx")
+
+[node name="star2" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1409390826]
+position = Vector2(-32.00003, -47.999996)
+scale = Vector2(3.7999997, 3.7999997)
+texture = ExtResource("10_yw2kx")
+
+[node name="star3" type="Sprite2D" parent="CharacterBody2D/Camera2D/Level_End" unique_id=1208461578]
+position = Vector2(280.99997, -11.000013)
+rotation = 0.34986582
+scale = Vector2(3.7999997, 3.7999997)
+texture = ExtResource("10_yw2kx")
+
+[connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]
+
 [editable path="CharacterBody2D/Camera2D/window"]
 [editable path="CharacterBody2D/Camera2D/window/editor"]
+[editable path="CharacterBody2D/Camera2D/window/LevelTimer"]

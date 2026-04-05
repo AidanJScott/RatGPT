@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://u4dw6e4suhvw"]
+[gd_scene format=3 uid="uid://u4dw6e4suhvw"]
 
 [ext_resource type="Script" uid="uid://by74rpabt71di" path="res://scripts/level_select_button.gd" id="1_5au5s"]
 
-[node name="LevelSelectButton" type="Button"]
+[node name="LevelSelectButton" type="Button" unique_id=657517702]
 custom_minimum_size = Vector2(150, 150)
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_font_sizes/font_size = 90
 script = ExtResource("1_5au5s")
 
-[node name="TimerLabel" type="Label" parent="."]
+[node name="TimerLabel" type="Label" parent="." unique_id=418332086]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,7 +26,7 @@ theme_override_font_sizes/font_size = 32
 text = "00m:00s"
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="."]
+[node name="CheckBox" type="CheckBox" parent="." unique_id=1218805104]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

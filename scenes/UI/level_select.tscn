@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkaqqdvn741gr"]
+[gd_scene format=3 uid="uid://dkaqqdvn741gr"]
 
 [ext_resource type="PackedScene" uid="uid://do8g3thqbm5yj" path="res://scenes/UI/fade_transition.tscn" id="1_3shnc"]
 [ext_resource type="Script" uid="uid://onb30crdih2e" path="res://scripts/level_select.gd" id="1_hoiyx"]
@@ -42,7 +42,7 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ty08u"]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="Control" unique_id=211986261]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hoiyx")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1796165223]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,7 +59,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="Button" parent="." unique_id=1251922232]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -84,7 +84,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0i6e4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ty08u")
 text = "Back"
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="." unique_id=136576479]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,36 +99,39 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 90
 
-[node name="Label" type="Label" parent="VBox"]
+[node name="Label" type="Label" parent="VBox" unique_id=709316867]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "Level Select"
 
-[node name="CenterContainer" type="CenterContainer" parent="VBox"]
+[node name="CenterContainer" type="CenterContainer" parent="VBox" unique_id=273703577]
 layout_mode = 2
 
-[node name="Buttons" type="GridContainer" parent="VBox/CenterContainer"]
+[node name="Buttons" type="GridContainer" parent="VBox/CenterContainer" unique_id=296106078]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/h_separation = 12
 columns = 3
 
-[node name="LevelSelectButton" parent="VBox/CenterContainer/Buttons" instance=ExtResource("1_p0wlc")]
+[node name="LevelSelectButton" parent="VBox/CenterContainer/Buttons" unique_id=1476687728 instance=ExtResource("1_p0wlc")]
 layout_mode = 2
 
-[node name="LevelSelectButton2" parent="VBox/CenterContainer/Buttons" instance=ExtResource("1_p0wlc")]
+[node name="LevelSelectButton2" parent="VBox/CenterContainer/Buttons" unique_id=1027429471 instance=ExtResource("1_p0wlc")]
 layout_mode = 2
 
-[node name="LevelSelectButton3" parent="VBox/CenterContainer/Buttons" instance=ExtResource("1_p0wlc")]
+[node name="LevelSelectButton3" parent="VBox/CenterContainer/Buttons" unique_id=1296651982 instance=ExtResource("1_p0wlc")]
 layout_mode = 2
 
-[node name="fade_transition" parent="." instance=ExtResource("1_3shnc")]
+[node name="LevelSelectButton4" parent="VBox/CenterContainer/Buttons" unique_id=307251665 instance=ExtResource("1_p0wlc")]
+layout_mode = 2
+
+[node name="fade_transition" parent="." unique_id=1287192835 instance=ExtResource("1_3shnc")]
 visible = false
 layout_mode = 0
 
-[node name="fade_timer" type="Timer" parent="fade_transition"]
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=1700818249]
 wait_time = 0.5
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
