@@ -57,3 +57,5 @@ func _save_level_score(new_score: String, level: int = current_level):
 	current_save.set(variable_name, new_score)
 	current_save.write_savegame()
 	
+func _reset_save_progress():
+	current_save.reset_save_progress()

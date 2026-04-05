@@ -23,6 +23,11 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://scripts/level_manager.gd"
 EventBus="*res://scripts/EventBus.gd"
+GlobalEnvironment="*res://scenes/GlobalEnvironment.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

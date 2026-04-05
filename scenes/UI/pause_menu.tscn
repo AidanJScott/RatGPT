@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://v5ygmg07ark4"]
+[gd_scene load_steps=9 format=3 uid="uid://v5ygmg07ark4"]
 
 [ext_resource type="Script" uid="uid://bg0of7e4m2dyx" path="res://scripts/pause_menu.gd" id="1_bl585"]
 [ext_resource type="PackedScene" uid="uid://cbuu0gg7bcs0o" path="res://matt/scenes/fade_transition.tscn" id="2_mko1u"]
+[ext_resource type="PackedScene" uid="uid://p0wn0b1q7s1y" path="res://scenes/UI/OptionsMenu.tscn" id="3_mko1u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li5ou"]
 bg_color = Color(1, 1, 1, 1)
@@ -168,9 +169,13 @@ layout_mode = 0
 [node name="fade_timer" type="Timer" parent="ColorRect/fade_transition"]
 wait_time = 0.5
 
-[connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Contiune" to="." method="_on_start_pressed"]
+[node name="OptionsMenu" parent="." instance=ExtResource("3_mko1u")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Contiune" to="." method="_on_contiune_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Contiune" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Quit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer/MarginContainer/VBoxContainer/Buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="ColorRect/fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

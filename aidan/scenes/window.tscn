@@ -87,8 +87,11 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wf6yl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rqd1g")
 text = "Pause"
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_po37e")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_po37e")]
 visible = false
-scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
