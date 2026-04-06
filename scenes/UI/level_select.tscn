@@ -113,6 +113,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 46
 columns = 3
 
 [node name="LevelSelectButton" parent="VBox/CenterContainer/Buttons" unique_id=1476687728 instance=ExtResource("1_p0wlc")]
