@@ -1,16 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpjo43wgs41lp"]
+[gd_scene format=3 uid="uid://cpjo43wgs41lp"]
 
-[ext_resource type="PackedScene" uid="uid://buh4rhiuhohri" path="res://scenes/maze.tscn" id="1_o6lbg"]
-[ext_resource type="PackedScene" uid="uid://dntp3hrkfc1ea" path="res://scenes/cheese.tscn" id="2_ej0t8"]
+[ext_resource type="PackedScene" uid="uid://i2fguroxx4c1" path="res://scenes/tutorial_maze.tscn" id="1_op5ms"]
 [ext_resource type="PackedScene" uid="uid://b5yexprdtwtqk" path="res://aidan/scenes/rat.tscn" id="2_op5ms"]
+[ext_resource type="Texture2D" uid="uid://cfjwkrvms0l7s" path="res://assets/window/Tutorial RatGPT.png" id="3_op5ms"]
+[ext_resource type="Script" uid="uid://dwx17hil8ljn5" path="res://scripts/tutorial_screen.gd" id="4_ej0t8"]
 
-[node name="game" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb2oa"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[node name="maze" parent="." instance=ExtResource("1_o6lbg")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ol3k"]
+bg_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[node name="cheese2" parent="maze" instance=ExtResource("2_ej0t8")]
-position = Vector2(186, 903)
-scale = Vector2(0.07, 0.07)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5gl5"]
+bg_color = Color(0.796243, 0.796243, 0.796243, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[node name="rat" parent="." instance=ExtResource("2_op5ms")]
-position = Vector2(62, 1020)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55e3l"]
+
+[node name="game" type="Node2D" unique_id=504528735]
+
+[node name="tutorial_maze" parent="." unique_id=1920957146 instance=ExtResource("1_op5ms")]
+
+[node name="rat" parent="." unique_id=1920034485 instance=ExtResource("2_op5ms")]
+position = Vector2(182, 1020)
+
+[node name="tutorial_screen" type="Sprite2D" parent="." unique_id=1365690148]
+position = Vector2(174, 1016)
+scale = Vector2(2.01, 2.01)
+texture = ExtResource("3_op5ms")
+script = ExtResource("4_ej0t8")
+
+[node name="continue" type="Button" parent="tutorial_screen" unique_id=1450939090]
+offset_left = -92.0398
+offset_top = 112.93529
+offset_right = 91.9602
+offset_bottom = 187.24376
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fb2oa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ol3k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v5gl5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fb2oa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_55e3l")
+text = "Continue to Game
+"
+
+[connection signal="pressed" from="tutorial_screen/continue" to="tutorial_screen" method="_on_continue_pressed"]
