@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://topythefbilk"]
+
+[ext_resource type="Texture2D" uid="uid://2c03a1ucplrg" path="res://assets/window/editor.png" id="1_siafb"]
+[ext_resource type="Texture2D" uid="uid://ctlg0sky4g5sq" path="res://assets/window/selector.png" id="2_siafb"]
+[ext_resource type="PackedScene" uid="uid://cxgo8y47q8bic" path="res://scenes/editor_scenes/empty_block.tscn" id="3_rhxrw"]
+[ext_resource type="PackedScene" uid="uid://dyxhii5o2gkvf" path="res://scenes/editor_scenes/up_block.tscn" id="4_siafb"]
+[ext_resource type="PackedScene" uid="uid://qpdce8x8grld" path="res://scenes/editor_scenes/down_block.tscn" id="5_plv43"]
+[ext_resource type="PackedScene" uid="uid://424ewtlckih5" path="res://scenes/editor_scenes/left_block.tscn" id="6_1tiyl"]
+[ext_resource type="Script" uid="uid://ctoemmokvg66r" path="res://scripts/menu_block.gd" id="6_5hery"]
+[ext_resource type="PackedScene" uid="uid://dpplsur5wqt1d" path="res://scenes/editor_scenes/right_block.tscn" id="7_5hery"]
+
+[node name="editor" type="Node2D" unique_id=1472075260]
+
+[node name="editor_frame" type="Sprite2D" parent="." unique_id=755623557]
+position = Vector2(786, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_siafb")
+
+[node name="selector" type="Sprite2D" parent="." unique_id=1611868262]
+position = Vector2(786, 418)
+scale = Vector2(2, 2)
+texture = ExtResource("2_siafb")
+
+[node name="editor_background" type="Polygon2D" parent="." unique_id=1448909090]
+polygon = PackedVector2Array(546, 291, 1027, 291, 1026, 541, 543, 544)
+
+[node name="instructions_background" type="Polygon2D" parent="." unique_id=2031185310]
+position = Vector2(4, -673)
+polygon = PackedVector2Array(546, 291, 1027, 291, 1014, 595, 542, 577)
+
+[node name="empty_block" parent="." unique_id=74583904 instance=ExtResource("3_rhxrw")]
+offset_left = 585.0
+offset_top = -385.0
+offset_right = 777.0
+offset_bottom = -337.0
+
+[node name="up_block" parent="." unique_id=245514825 instance=ExtResource("4_siafb")]
+offset_left = 569.0
+offset_top = 332.0
+offset_right = 761.0
+offset_bottom = 380.0
+script = ExtResource("6_5hery")
+
+[node name="down_block" parent="." unique_id=535050133 instance=ExtResource("5_plv43")]
+offset_left = 566.0
+offset_top = 429.0
+offset_right = 758.0
+offset_bottom = 477.0
+script = ExtResource("6_5hery")
+
+[node name="left_block" parent="." unique_id=1162156063 instance=ExtResource("6_1tiyl")]
+offset_left = 798.0
+offset_top = 330.0
+offset_right = 990.0
+offset_bottom = 378.0
+script = ExtResource("6_5hery")
+
+[node name="right_block" parent="." unique_id=1758858207 instance=ExtResource("7_5hery")]
+offset_left = 800.0
+offset_top = 428.0
+offset_right = 992.0
+offset_bottom = 476.0
+script = ExtResource("6_5hery")

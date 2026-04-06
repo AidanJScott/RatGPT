@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bs0h5kmcosjok"]
+
+[ext_resource type="AudioStream" uid="uid://dd1mc2espd2f2" path="res://assets/music/in_game_music.mp3" id="1_ydaxe"]
+
+[node name="MenuMusic" type="Node" unique_id=1875908418]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=606962390]
+stream = ExtResource("1_ydaxe")
+autoplay = true
+bus = &"Music"

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5yexprdtwtqk"]
 
 [ext_resource type="Texture2D" uid="uid://2qgpbchkrqtd" path="res://aidan/assets/rat/downrat.png" id="1_3csnj"]
-[ext_resource type="Script" uid="uid://cut2jb41cvssy" path="res://aidan/scripts/character_body_2d.gd" id="1_6s34g"]
+[ext_resource type="Script" uid="uid://blseis7du872v" path="res://scripts/rat_movement.gd" id="1_3242j"]
 [ext_resource type="Texture2D" uid="uid://iqqgb46x5157" path="res://aidan/assets/rat/leftrat.png" id="2_6s34g"]
 [ext_resource type="Texture2D" uid="uid://c3awxguy3rvs1" path="res://aidan/assets/rat/rightrat.png" id="3_368s2"]
 [ext_resource type="Texture2D" uid="uid://3l1dhxt8kdwy" path="res://aidan/assets/rat/uprat.png" id="4_nnna8"]
@@ -64,7 +64,7 @@ bg_color = Color(0, 0, 0, 1)
 [node name="rat" type="Node2D" unique_id=398345126]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2004362197 groups=["player"]]
-script = ExtResource("1_6s34g")
+script = ExtResource("1_3242j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=502824142]
 position = Vector2(0, 1)

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bagoiil7yg631"]
+
+[ext_resource type="Script" uid="uid://cpkypjq1wrpba" path="res://scripts/window.gd" id="1_syahi"]
+[ext_resource type="Texture2D" uid="uid://7k4eyjwgfipg" path="res://assets/window/frame.png" id="2_ato5p"]
+[ext_resource type="Texture2D" uid="uid://by1251nmdtpes" path="res://assets/window/runbutton.png" id="3_syahi"]
+[ext_resource type="PackedScene" uid="uid://topythefbilk" path="res://scenes/editor_scenes/editor.tscn" id="4_ato5p"]
+[ext_resource type="PackedScene" uid="uid://bqii1phsqvhn2" path="res://scenes/pause_menu.tscn" id="5_syahi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6yl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po37e"]
+bg_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xjrb"]
+bg_color = Color(0.796243, 0.796243, 0.796243, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rqd1g"]
+
+[node name="window" type="Node2D" unique_id=1832264529]
+script = ExtResource("1_syahi")
+
+[node name="frame" type="Sprite2D" parent="." unique_id=1751231064]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ato5p")
+
+[node name="run_button" type="Sprite2D" parent="." unique_id=917348358]
+position = Vector2(4, 535)
+scale = Vector2(2, 2)
+texture = ExtResource("3_syahi")
+
+[node name="editor" parent="." unique_id=1472075260 instance=ExtResource("4_ato5p")]
+
+[node name="pause" type="Button" parent="." unique_id=1781388697]
+offset_left = 1036.0
+offset_top = -629.0
+offset_right = 1131.0
+offset_bottom = -579.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wf6yl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_po37e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xjrb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wf6yl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rqd1g")
+text = "Pause"
+
+[node name="pause_menu" parent="." unique_id=806865130 instance=ExtResource("5_syahi")]
+visible = false
+offset_left = -226.0
+offset_top = -263.0
+offset_right = -226.0
+offset_bottom = -263.0
+
+[connection signal="pressed" from="pause" to="." method="pause_menu_handler"]

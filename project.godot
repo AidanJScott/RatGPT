@@ -19,11 +19,16 @@ run/main_scene="uid://itptk4u3fbdt"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://2nhn1sf0fp58"
+
 [autoload]
 
 LevelManager="*res://scripts/level_manager.gd"
 EventBus="*res://scripts/EventBus.gd"
 GlobalEnvironment="*res://scenes/GlobalEnvironment.tscn"
+MenuMusic="*uid://bs0h5kmcosjok"
 
 [display]
 

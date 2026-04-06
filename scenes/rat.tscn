@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bus74s754nrrb"]
+
+[ext_resource type="Script" uid="uid://blseis7du872v" path="res://scripts/rat_movement.gd" id="1_368s2"]
+[ext_resource type="Texture2D" uid="uid://c1b14durebebb" path="res://assets/rat/downrat.png" id="2_368s2"]
+[ext_resource type="Texture2D" uid="uid://c3wkm71fae0e4" path="res://assets/rat/leftrat.png" id="3_nnna8"]
+[ext_resource type="Texture2D" uid="uid://clvobs53g3aax" path="res://assets/rat/rightrat.png" id="4_po2hf"]
+[ext_resource type="Texture2D" uid="uid://8wfwdkyc180y" path="res://assets/rat/uprat.png" id="5_0g0h3"]
+[ext_resource type="PackedScene" uid="uid://bagoiil7yg631" path="res://scenes/window.tscn" id="6_nnna8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_po2hf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_368s2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nnna8")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_po2hf")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0g0h3")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g0h3"]
+radius = 49.0
+
+[node name="rat" type="Node2D" unique_id=661724722]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=467822986]
+script = ExtResource("1_368s2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=940355861]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_po2hf")
+animation = &"right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=299752264]
+shape = SubResource("CircleShape2D_0g0h3")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1979016857]
+zoom = Vector2(0.5, 0.5)
+
+[node name="window" parent="CharacterBody2D/Camera2D" unique_id=1832264529 instance=ExtResource("6_nnna8")]

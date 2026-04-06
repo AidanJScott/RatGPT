@@ -19,7 +19,7 @@ var chance_of_turning = 0.01
 
 func _ready():
 	cheese.cheesed.connect(cheese_collected)
-
+	MenuMusic.get_child(0).playing = false
 func cheese_collected():
 	%Level_End.visible = true
 	%VictorySFX.play()

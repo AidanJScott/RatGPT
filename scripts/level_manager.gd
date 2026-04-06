@@ -2,7 +2,7 @@ extends Node
 
 var current_level: int = 1
 var level_unlocked: int = 2
-var max_level: int = 3
+var max_level: int = 4
 
 var current_save: SaveGame
 
