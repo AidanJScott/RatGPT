@@ -53,10 +53,10 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jivf8"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jivf8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d5br"]
 
 [node name="OptionsMenu" type="Control" unique_id=2009751225]
 layout_mode = 3
@@ -197,8 +197,12 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jivf8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_jivf8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jivf8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jivf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jivf8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jivf8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_jivf8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2d5br")
 theme_override_colors/button_checked_color = Color(0, 0, 0, 1)
 theme_override_colors/button_unchecked_color = Color(0, 0, 0, 1)
 text = "Fullscreen"

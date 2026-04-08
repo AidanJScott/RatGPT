@@ -19,10 +19,12 @@ func _on_timer_timeout() -> void:
 func _on_level_end_received():
 	$Timer.stop()
 	
+	var intValOfTime: int = 1000000
 	var savedScore: String = LevelManager._get_saved_score()
-	savedScore = savedScore.replace("m","").replace("s", "")
-	var split = savedScore.split(":")
-	var intValOfTime: int = (int(split[0]) * 60) + int(split[1])
+	if savedScore != "00m:00s":
+		savedScore = savedScore.replace("m","").replace("s", "")
+		var split = savedScore.split(":")
+		intValOfTime = (int(split[0]) * 60) + int(split[1])
 
 	if total_time_seconds < intValOfTime:
 		print("Saving")

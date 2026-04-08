@@ -21,6 +21,9 @@ func _ready() -> void:
 	check_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$TimerLabel.text = LevelManager._get_saved_score(level_to_load)
 
+func _enter_tree():
+	request_ready()
+
 func _pressed() -> void:
 	if is_unlocked:
 		LevelManager._load_level(level_to_load)
