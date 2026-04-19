@@ -3,6 +3,9 @@ class_name SaveGame
 
 const SAVE_GAME_PATH:= "user://savegame.tres"
 
+# 0 default, 1 deut, 2 prot, 3 trit
+@export var colourblind_mode: int = 0
+
 @export var level0_highScore: String = "00m:00s"
 @export var level1_highScore: String = "00m:00s"
 @export var level2_highScore: String = "00m:00s"

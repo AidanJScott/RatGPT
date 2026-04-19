@@ -1,6 +1,6 @@
 extends Control
 
-@onready var cheese: Sprite2D = $Cheese
+@onready var cheese: Area2D = $cheese
 
 var button_type = null
 

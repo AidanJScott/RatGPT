@@ -59,3 +59,10 @@ func _save_level_score(new_score: String, level: int = current_level):
 	
 func _reset_save_progress():
 	current_save.reset_save_progress()
+
+func _set_colorblind(new_index: int):
+	current_save.set("colourblind_mode", new_index)
+	current_save.write_savegame()
+
+func _get_colorblind() -> int:
+	return current_save.get("colourblind_mode")

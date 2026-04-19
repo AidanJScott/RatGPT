@@ -1,5 +1,7 @@
 extends Control
 
+func _ready():
+	$HBoxContainer/Visual/Settings/ColourBlindDropdown.selected = LevelManager._get_colorblind()
 
 func _on_back_pressed() -> void:
 	# Return to MM if parent isn't pause menu, otherwise yield back to pause menu
@@ -7,7 +9,6 @@ func _on_back_pressed() -> void:
 		self.visible = false
 	else:
 		get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
-
 
 func _on_master_slider_value_changed(value: float) -> void:
 	var bus_id = AudioServer.get_bus_index("Master")
@@ -34,6 +35,12 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 
 func _on_brightness_slider_value_changed(value: float) -> void:
 	GlobalEnvironment.environment.adjustment_brightness = value
+
+
+func _on_colour_blind_dropdown_item_selected(index: int) -> void:
+	# 0 default, 1 deut, 2 prot, 3 trit
+	LevelManager._set_colorblind(index)
+	$HBoxContainer/Visual/Settings/cheese.updateShader()
 
 
 func _on_reset_pressed() -> void:
