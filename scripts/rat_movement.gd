@@ -18,16 +18,12 @@ func _physics_process(delta):
 	if not moving:
 		if Input.is_action_just_pressed("up"):
 			try_start_move(Vector2.UP)
-			animated_sprite_2d.play("up")
 		elif Input.is_action_just_pressed("down"):
 			try_start_move(Vector2.DOWN)
-			animated_sprite_2d.play("down")
 		elif Input.is_action_just_pressed("left"):
 			try_start_move(Vector2.LEFT)
-			animated_sprite_2d.play("left")
 		elif Input.is_action_just_pressed("right"):
 			try_start_move(Vector2.RIGHT)
-			animated_sprite_2d.play("right")
 
 	if moving:
 		velocity = move_direction * SPEED
@@ -47,6 +43,14 @@ func try_start_move(direction: Vector2):
 		move_direction = direction
 		target_position = position + direction * GRID_UNIT
 		moving = true
+		if direction == Vector2.UP:
+			animated_sprite_2d.play("up")
+		elif direction == Vector2.DOWN:
+			animated_sprite_2d.play("down")
+		elif direction == Vector2.LEFT:
+			animated_sprite_2d.play("left")
+		elif direction == Vector2.RIGHT:
+			animated_sprite_2d.play("right")
 
 func cheese_collected():
 	%Level_End.visible = true

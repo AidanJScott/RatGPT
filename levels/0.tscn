@@ -57,6 +57,7 @@ texture = ExtResource("3_op5ms")
 script = ExtResource("4_ej0t8")
 
 [node name="continue" type="Button" parent="tutorial_screen" unique_id=1450939090]
+visible = false
 offset_left = -92.0398
 offset_top = 112.93529
 offset_right = 91.9602

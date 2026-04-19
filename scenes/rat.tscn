@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://clvobs53g3aax" path="res://assets/rat/rightrat.png" id="4_po2hf"]
 [ext_resource type="Texture2D" uid="uid://8wfwdkyc180y" path="res://assets/rat/uprat.png" id="5_0g0h3"]
 [ext_resource type="PackedScene" uid="uid://bagoiil7yg631" path="res://scenes/window.tscn" id="6_nnna8"]
+[ext_resource type="Script" uid="uid://od3e6yms63da" path="res://scripts/movement_manager.gd" id="7_nnna8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_po2hf"]
 animations = [{
@@ -62,3 +63,6 @@ shape = SubResource("CircleShape2D_0g0h3")
 zoom = Vector2(0.5, 0.5)
 
 [node name="window" parent="CharacterBody2D/Camera2D" unique_id=1832264529 instance=ExtResource("6_nnna8")]
+
+[node name="MovementManager" type="Node" parent="." unique_id=773958762]
+script = ExtResource("7_nnna8")
