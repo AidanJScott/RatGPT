@@ -1,5 +1,6 @@
 extends HSlider
 @onready var up_label: Label = $"../UpLabel"
+@onready var line_1: ColorRect = $"../Net_Example/line1"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,3 +19,4 @@ func _on_down_slider_value_changed(other_value: float) -> void:
 
 func _on_value_changed(value: float) -> void:
 	up_label.text = "Up %d" % value
+	line_1.size.y = 10 + value/10.0

@@ -160,6 +160,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 194
 text = "00:00"
 
+[connection signal="pressed" from="CharacterBody2D/Camera2D/window/run_button" to="CharacterBody2D" method="_on_run_button_pressed"]
 [connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]
 
 [editable path="CharacterBody2D/Camera2D/window"]

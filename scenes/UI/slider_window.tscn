@@ -60,10 +60,13 @@ offset_right = 1052.0
 offset_bottom = 570.0
 theme = SubResource("Theme_oya5r")
 
-[node name="run_button" type="Sprite2D" parent="." unique_id=1511511721]
-position = Vector2(4, 535)
-scale = Vector2(2, 2)
-texture = ExtResource("3_hmwjl")
+[node name="run_button" type="Button" parent="." unique_id=2038813819]
+offset_left = -105.0
+offset_top = 455.0
+offset_right = 8.0
+offset_bottom = 536.0
+scale = Vector2(1.9231203, 1.9231203)
+icon = ExtResource("3_hmwjl")
 
 [node name="editor" parent="." unique_id=1472075260 instance=ExtResource("4_1qax4")]
 

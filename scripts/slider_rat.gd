@@ -16,10 +16,8 @@ var move_direction = Vector2.ZERO
 @onready var star_2: Sprite2D = $Camera2D/Level_End/star2
 @onready var star_3: Sprite2D = $Camera2D/Level_End/star3
 
-func _physics_process(delta):
 
-	if not moving:
-		if Input.is_action_just_pressed("up") || Input.is_action_just_pressed("down") || Input.is_action_just_pressed("right") || Input.is_action_just_pressed("left"):
+func move():
 			if right_slider.visible == false || randi_range(0,1) == 0:
 				var rand = randi_range(0,100)
 				if rand < up_slider.value:
@@ -36,6 +34,9 @@ func _physics_process(delta):
 				elif rand < left_slider.value + right_slider.value:
 					try_start_move(Vector2.LEFT)
 					animated_sprite_2d.play("left")
+
+
+func _physics_process(delta):
 
 	if moving:
 		velocity = move_direction * SPEED
@@ -82,3 +83,26 @@ func level_ends():
 		star_2.texture = preload("res://assets/full_star.png")
 		star_3.texture = preload("res://assets/full_star.png")
 	level_end.visible = true
+
+
+func _on_run_button_pressed() -> void:
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout
+	move()
+	await get_tree().create_timer(0.5).timeout

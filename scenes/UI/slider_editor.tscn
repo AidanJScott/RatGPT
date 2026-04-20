@@ -163,6 +163,161 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_dkuk0")
 value = 50.0
 script = ExtResource("5_8h0vb")
 
+[node name="Net_Example" type="Control" parent="." unique_id=732455424]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="input" type="Label" parent="Net_Example" unique_id=1846940957]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 208.0
+offset_right = 621.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="output1" type="Label" parent="Net_Example" unique_id=769364041]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 139.0
+offset_right = 1027.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="output2" type="Label" parent="Net_Example" unique_id=1065803613]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 297.0
+offset_right = 1027.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="intermediate1" type="Label" parent="Net_Example" unique_id=1147568402]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 134.0
+offset_right = 823.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="intermediate2" type="Label" parent="Net_Example" unique_id=69324725]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 294.0
+offset_right = 823.0
+offset_bottom = 571.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="line1" type="ColorRect" parent="Net_Example" unique_id=1316231482]
+layout_mode = 0
+offset_left = 600.99994
+offset_top = 258.00003
+offset_right = 760.7884
+offset_bottom = 275.55054
+rotation = -0.35806203
+color = Color(0, 0, 0, 1)
+
+[node name="line2" type="ColorRect" parent="Net_Example" unique_id=1153479614]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 287.0
+offset_right = 769.78845
+offset_bottom = 304.5505
+rotation = 0.37030524
+color = Color(0, 0, 0, 1)
+
+[node name="line3" type="ColorRect" parent="Net_Example" unique_id=325141024]
+layout_mode = 0
+offset_left = 808.00006
+offset_top = 196.00002
+offset_right = 959.9713
+offset_bottom = 213.55052
+rotation = -0.00063305814
+color = Color(0, 0, 0, 1)
+
+[node name="line4" type="ColorRect" parent="Net_Example" unique_id=1857824823]
+layout_mode = 0
+offset_left = 808.00006
+offset_top = 356.0
+offset_right = 959.9713
+offset_bottom = 373.5505
+rotation = 0.0015075216
+color = Color(0, 0, 0, 1)
+
+[node name="output3" type="Label" parent="Net_Example" unique_id=635740920]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 20.0
+offset_right = 1027.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="output4" type="Label" parent="Net_Example" unique_id=2016515005]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 411.0
+offset_right = 1027.0
+offset_bottom = 688.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "O
+"
+
+[node name="line5" type="ColorRect" parent="Net_Example" unique_id=325417358]
+layout_mode = 0
+offset_left = 799.99994
+offset_top = 335.99997
+offset_right = 996.1815
+offset_bottom = 353.55048
+rotation = -0.64474833
+color = Color(0, 0, 0, 1)
+
+[node name="line6" type="ColorRect" parent="Net_Example" unique_id=1489709653]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 223.00002
+offset_right = 1007.76013
+offset_bottom = 240.55052
+rotation = 0.6147001
+color = Color(0, 0, 0, 1)
+
+[node name="line7" type="ColorRect" parent="Net_Example" unique_id=1743969551]
+layout_mode = 0
+offset_left = 797.99994
+offset_top = 180.99997
+offset_right = 975.441
+offset_bottom = 198.55048
+rotation = -0.474301
+color = Color(0, 0, 0, 1)
+
+[node name="line8" type="ColorRect" parent="Net_Example" unique_id=2080053933]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 381.0
+offset_right = 984.69495
+offset_bottom = 398.5505
+rotation = 0.46838418
+color = Color(0, 0, 0, 1)
+
 [connection signal="value_changed" from="UpSlider" to="UpSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="UpSlider" to="DownSlider" method="_on_up_slider_value_changed"]
 [connection signal="value_changed" from="DownSlider" to="UpSlider" method="_on_down_slider_value_changed"]

@@ -13,4 +13,26 @@ position = Vector2(1255, 313)
 [node name="rat" parent="." unique_id=1987628345 instance=ExtResource("2_tlvj4")]
 position = Vector2(1260, 899)
 
+[node name="output3" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="9" unique_id=635740920]
+visible = false
+
+[node name="output4" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="10" unique_id=2016515005]
+visible = false
+
+[node name="line5" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="11" unique_id=325417358]
+visible = false
+
+[node name="line6" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="12" unique_id=1489709653]
+visible = false
+
+[node name="line7" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="13" unique_id=1743969551]
+visible = false
+
+[node name="line8" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="14" unique_id=2080053933]
+visible = false
+
 [editable path="maze"]
+[editable path="rat"]
+[editable path="rat/CharacterBody2D/Camera2D/window"]
+[editable path="rat/CharacterBody2D/Camera2D/window/editor"]
+[editable path="rat/CharacterBody2D/Camera2D/window/LevelTimer"]
