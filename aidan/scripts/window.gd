@@ -2,6 +2,8 @@ extends Node2D
 @onready var pause_menu: Control = $CanvasLayer/PauseMenu
 var paused = false
 
+func _ready() -> void:
+	MoveCounter.step_label = $StepLabel
 		
 func pause_menu_handler():
 	if paused:

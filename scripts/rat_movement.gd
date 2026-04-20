@@ -60,6 +60,7 @@ func try_start_move(direction: Vector2):
 	var space_check = move_and_collide(direction * GRID_UNIT, true)
 	
 	if space_check == null:
+		MoveCounter.increase_step()
 		move_direction = direction
 		target_position = position + direction * GRID_UNIT
 		moving = true

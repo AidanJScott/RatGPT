@@ -88,4 +88,15 @@ visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="StepLabel" type="Label" parent="." unique_id=363272647]
+offset_left = 731.0
+offset_top = -635.0
+offset_right = 867.0
+offset_bottom = -580.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Steps: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
