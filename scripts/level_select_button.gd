@@ -2,6 +2,7 @@ extends Button
 
 @onready var timer_label: Label = $TimerLabel
 @onready var check_box: CheckBox = $CheckBox
+@onready var level_select_button: Button = $"."
 
 var level_to_load: int = 1
 var is_unlocked: bool = false
@@ -13,8 +14,10 @@ func _ready() -> void:
 	text = str(level_to_load)
 	is_unlocked = level_to_load <= LevelManager.level_unlocked
 	if is_unlocked:
-		modulate.a = 1.0
-		check_box.set_pressed_no_signal(LevelManager._level_beenCompleted(level_to_load))
+		if LevelManager._level_beenCompleted(level_to_load):
+			print(LevelManager._level_beenCompleted(level_to_load))
+			check_box.set_pressed_no_signal(true)
+			level_select_button.modulate = Color(1, 0.84, 0.0)
 	else:
 		modulate.a = 0.5
 	
