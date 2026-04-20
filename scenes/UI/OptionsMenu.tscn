@@ -390,24 +390,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ResetHBox" type="HBoxContainer" parent="ResetConfirm" unique_id=1509101966]
+[node name="CancelButton" type="Button" parent="ResetConfirm" unique_id=1434032968]
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.0
+offset_left = -230.0
 offset_top = -25.0
-offset_right = 162.0
+offset_right = -70.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 120
-
-[node name="CancelButton" type="Button" parent="ResetConfirm/ResetHBox" unique_id=1434032968]
-custom_minimum_size = Vector2(160, 50)
-layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -423,9 +419,21 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fc16a")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nxf3m")
 text = "Cancel"
 
-[node name="ResetButton" type="Button" parent="ResetConfirm/ResetHBox" unique_id=109631120]
+[node name="ResetButton" type="Button" parent="ResetConfirm" unique_id=109631120]
+visible = false
 custom_minimum_size = Vector2(160, 50)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -25.0
+offset_right = 230.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -449,5 +457,5 @@ text = "Reset Progress"
 [connection signal="value_changed" from="HBoxContainer/Visual/Settings/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
 [connection signal="item_selected" from="HBoxContainer/Visual/Settings/ColourBlindDropdown" to="." method="_on_colour_blind_dropdown_item_selected"]
 [connection signal="pressed" from="HBoxContainer/Misc/Settings/Reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="ResetConfirm/ResetHBox/CancelButton" to="." method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="ResetConfirm/ResetHBox/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="ResetConfirm/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ResetConfirm/ResetButton" to="." method="_on_reset_button_pressed"]

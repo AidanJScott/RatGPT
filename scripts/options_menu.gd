@@ -44,13 +44,19 @@ func _on_colour_blind_dropdown_item_selected(index: int) -> void:
 
 
 func _on_reset_pressed() -> void:
+	$ResetConfirm/ResetButton.visible = false
 	$ResetConfirm.visible = true
+	await get_tree().create_timer(3.0).timeout
+	if $ResetConfirm.visible:
+		$ResetConfirm/ResetButton.visible = true
 
 func _on_reset_button_pressed() -> void:
+	$ResetConfirm/ResetButton.visible = false
 	$ResetConfirm.visible = false
 	LevelManager._reset_save_progress()
 	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
 
 func _on_cancel_button_pressed() -> void:
+	$ResetConfirm/ResetButton.visible = false
 	$ResetConfirm.visible = false
