@@ -1,19 +1,18 @@
 extends Node
-@onready var character_body_2d: CharacterBody2D = $"../CharacterBody2D"
-var moves = 0
+@onready var character_body_2d: CharacterBody2D = $CharacterBody2D
+
 var command_list = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	command_list = ["up", "right", "down", "left", "up", "right", "down", "left", "up", "right", "down", "left"]
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		execute_movement(command_list)
+	pass
 
-func execute_movement(command_list):
+func execute_movement():
 	for command in command_list:
 		move_direction(command)
 		await get_tree().create_timer(0.5).timeout

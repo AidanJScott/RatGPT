@@ -1,5 +1,6 @@
 extends TextureRect
 @onready var panel: Panel = $Panel
+var command = ""
 
 
 func _get_drag_data(at_position):
@@ -13,7 +14,10 @@ func _get_drag_data(at_position):
  
 	set_drag_preview(preview)
 	
+	# get rid of texture and revert to empty block
+	
 	texture = null
+	command = ""
 	var stylebox = panel.get_theme_stylebox("panel").duplicate()
 	stylebox.border_width_left = 5
 	stylebox.border_width_right = 5
@@ -29,12 +33,14 @@ func _can_drop_data(_pos, data):
 func _drop_data(_pos, data):
 	texture = data
 	
+	command = texture.resource_path.get_file().get_basename()
+	print(command)
+	
 	# clone node
 	var clone = preload("res://aidan/scenes/empty_block.tscn").instantiate()
 	get_parent().add_child(clone)
 	clone.position = position + Vector2(0, 48)
 	
-	print(clone.position)
 	
 	# remove current border
 	var stylebox = panel.get_theme_stylebox("panel").duplicate()

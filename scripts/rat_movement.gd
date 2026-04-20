@@ -7,6 +7,7 @@ const GRID_UNIT = 120
 var target_position: Vector2
 var moving = false
 var move_direction = Vector2.ZERO
+var command_list = []
 @onready var star_1: Sprite2D = $Camera2D/Level_End/star1
 @onready var star_2: Sprite2D = $Camera2D/Level_End/star2
 @onready var star_3: Sprite2D = $Camera2D/Level_End/star3
@@ -14,6 +15,8 @@ var move_direction = Vector2.ZERO
 @onready var level_timer: Control = $Camera2D/window/LevelTimer
 
 func _physics_process(delta):
+	
+	command_list = MovementManager.command_list
 
 	if not moving:
 		if Input.is_action_just_pressed("up"):
@@ -34,6 +37,23 @@ func _physics_process(delta):
 			position = target_position
 			stop_move()
 
+func execute_movement():
+	for command in command_list:
+		move(command)
+		await get_tree().create_timer(0.5).timeout
+	return
+
+func move(direction: String):
+	if direction == "up":
+		try_start_move(Vector2.UP)
+	elif direction == "down":
+		try_start_move(Vector2.DOWN)
+	elif direction == "left":
+		try_start_move(Vector2.LEFT)
+	elif direction == "right":
+		try_start_move(Vector2.RIGHT)
+	return
+	
 
 func try_start_move(direction: Vector2):
 	# uses test_only parameter for checking if collision occurs

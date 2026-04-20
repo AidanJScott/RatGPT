@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://3hmsuvqi2evw" path="res://aidan/scenes/window.tscn" id="6_368s2"]
 [ext_resource type="PackedScene" uid="uid://dk2mphmi52rfr" path="res://scenes/UI/level_timer.tscn" id="8_nsmht"]
 [ext_resource type="Script" uid="uid://whamkyofa0bd" path="res://scripts/level_end.gd" id="9_k07wv"]
+[ext_resource type="Texture2D" uid="uid://by1251nmdtpes" path="res://assets/window/runbutton.png" id="9_y8y73"]
 [ext_resource type="Texture2D" uid="uid://dwo4r500wdi17" path="res://assets/full_star.png" id="10_3242j"]
-[ext_resource type="Script" uid="uid://od3e6yms63da" path="res://scripts/movement_manager.gd" id="11_3242j"]
+[ext_resource type="Script" uid="uid://d21grgmh7p1wm" path="res://scripts/run_button.gd" id="10_y8y73"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_po2hf"]
 animations = [{
@@ -87,6 +88,15 @@ offset_top = -628.0
 offset_right = -1128.0
 offset_bottom = -628.0
 
+[node name="Button" type="Button" parent="CharacterBody2D/Camera2D/window" unique_id=1904753964]
+offset_left = -91.0
+offset_top = 501.0
+offset_right = 22.0
+offset_bottom = 582.0
+scale = Vector2(1.6332526, 1.5523576)
+icon = ExtResource("9_y8y73")
+script = ExtResource("10_y8y73")
+
 [node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=1031122849]
 unique_name_in_owner = true
 visible = false
@@ -160,7 +170,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 194
 text = "00:00"
 
-[node name="movement_manager" type="Node" parent="." unique_id=1444931756]
-script = ExtResource("11_3242j")
-
+[connection signal="pressed" from="CharacterBody2D/Camera2D/window/Button" to="CharacterBody2D" method="execute_movement"]
 [connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]
