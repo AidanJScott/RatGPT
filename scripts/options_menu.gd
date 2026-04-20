@@ -44,6 +44,13 @@ func _on_colour_blind_dropdown_item_selected(index: int) -> void:
 
 
 func _on_reset_pressed() -> void:
+	$ResetConfirm.visible = true
+
+func _on_reset_button_pressed() -> void:
+	$ResetConfirm.visible = false
 	LevelManager._reset_save_progress()
 	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
+
+func _on_cancel_button_pressed() -> void:
+	$ResetConfirm.visible = false
