@@ -34,7 +34,6 @@ func _drop_data(_pos, data):
 	texture = data
 	
 	command = texture.resource_path.get_file().get_basename()
-	print(command)
 	
 	# clone node
 	var clone = preload("res://aidan/scenes/empty_block.tscn").instantiate()

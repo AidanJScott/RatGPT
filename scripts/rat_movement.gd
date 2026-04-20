@@ -40,8 +40,11 @@ func _physics_process(delta):
 
 func execute_movement():
 	for command in command_list:
-		move(command)
-		await get_tree().create_timer(0.5).timeout
+		if command == "":
+			pass
+		else:
+			move(command)
+			await get_tree().create_timer(0.5).timeout
 	return
 
 func move(direction: String):

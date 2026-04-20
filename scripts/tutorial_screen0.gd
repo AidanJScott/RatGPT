@@ -3,8 +3,11 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(5.0).timeout
-	get_child(0).show()
+	if LevelManager._level_beenCompleted(2):
+		hide()
+	else:
+		await get_tree().create_timer(5.0).timeout
+		get_child(0).show()
 
 
 

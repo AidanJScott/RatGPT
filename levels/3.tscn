@@ -7,8 +7,8 @@
 
 [node name="maze" parent="." unique_id=152593199 instance=ExtResource("1_4l4ro")]
 
-[node name="cheese" parent="maze" index="1"]
-position = Vector2(663.9999, 68)
+[node name="cheese" parent="maze" index="1" unique_id=1253464605]
+position = Vector2(663.9999, 1030)
 
 [node name="rat" parent="." unique_id=1987628345 instance=ExtResource("2_pkpa4")]
 position = Vector2(61, 1019)
