@@ -66,6 +66,66 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eur4t"]
+bg_color = Color(0.5050383, 0.73, 0.4161, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlbhp"]
+bg_color = Color(0.20063166, 0.29, 0.1653, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc16a"]
+bg_color = Color(0.29748833, 0.43, 0.2451, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klup0"]
+bg_color = Color(1, 0.27058825, 0.27058825, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jcjh"]
+bg_color = Color(0.4509804, 0.12156863, 0.12156863, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="OptionsMenu" type="Control" unique_id=2009751225]
 layout_mode = 3
 anchors_preset = 15
@@ -300,6 +360,86 @@ text = "Warning: This action cannot be undone!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="ResetConfirm" type="ColorRect" parent="." unique_id=426526486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54901963)
+
+[node name="ResetLabel" type="Label" parent="ResetConfirm" unique_id=727525994]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.25
+offset_top = 199.0
+offset_right = 233.25
+offset_bottom = 258.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "Are you sure you want to reset your progress?
+This CANNOT be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ResetHBox" type="HBoxContainer" parent="ResetConfirm" unique_id=1509101966]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -25.0
+offset_right = 162.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+
+[node name="CancelButton" type="Button" parent="ResetConfirm/ResetHBox" unique_id=1434032968]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_eur4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vlbhp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fc16a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fc16a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nxf3m")
+text = "Cancel"
+
+[node name="ResetButton" type="Button" parent="ResetConfirm/ResetHBox" unique_id=109631120]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_klup0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_klup0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1jcjh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_klup0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nxf3m")
+text = "Reset Progress"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="HBoxContainer/Audio/Settings/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Audio/Settings/MusicSlider" to="." method="_on_music_slider_value_changed"]
@@ -308,3 +448,5 @@ autowrap_mode = 2
 [connection signal="value_changed" from="HBoxContainer/Visual/Settings/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
 [connection signal="item_selected" from="HBoxContainer/Visual/Settings/ColourBlindDropdown" to="." method="_on_colour_blind_dropdown_item_selected"]
 [connection signal="pressed" from="HBoxContainer/Misc/Settings/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="ResetConfirm/ResetHBox/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ResetConfirm/ResetHBox/ResetButton" to="." method="_on_reset_button_pressed"]
