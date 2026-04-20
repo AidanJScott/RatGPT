@@ -48,6 +48,24 @@ func _get_saved_score(level: int = current_level) -> String:
 		print("Warning: '", variable_name, "' does not exist in save data.")
 		return "00m:00s"
 		
+func _get_saved_steps(level: int = current_level) -> String:
+	if current_save == null:
+		return ""
+	
+	var steps = current_save.levels_step[level]
+	if steps == 0:
+		return ""
+	else:
+		return str(steps) + " Steps"
+
+func _save_steps(new_steps: int, level: int = current_level):
+	if current_save == null:
+		printerr("Cannot save, no save file loaded.")
+		return
+		
+	current_save.levels_step[level] = new_steps
+	current_save.write_savegame()
+		
 func _save_level_score(new_score: String, level: int = current_level):
 	if current_save == null:
 		printerr("Cannot save, no save file loaded.")

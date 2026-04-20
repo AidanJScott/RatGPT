@@ -15,3 +15,6 @@ func reset_steps() -> void:
 func _update_label() -> void:
 	if step_label:
 		step_label.text = "Steps: " + str(step_count)
+
+func _get_steps() -> int:
+	return step_count

@@ -1,6 +1,7 @@
 extends Button
 
-@onready var timer_label: Label = $TimerLabel
+# @onready var timer_label: Label = $TimerLabel
+@onready var steps_label: Label = $StepsLabel
 @onready var check_box: CheckBox = $CheckBox
 @onready var level_select_button: Button = $"."
 
@@ -22,7 +23,8 @@ func _ready() -> void:
 		modulate.a = 0.5
 	
 	check_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	$TimerLabel.text = LevelManager._get_saved_score(level_to_load)
+	#$TimerLabel.text = LevelManager._get_saved_score(level_to_load)
+	steps_label.text = LevelManager._get_saved_steps(level_to_load)
 
 func _enter_tree():
 	request_ready()

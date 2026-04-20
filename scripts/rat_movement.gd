@@ -12,7 +12,8 @@ var command_list = []
 @onready var star_2: Sprite2D = $Camera2D/Level_End/star2
 @onready var star_3: Sprite2D = $Camera2D/Level_End/star3
 @onready var level_end: Control = %Level_End
-@onready var level_timer: Control = $Camera2D/window/LevelTimer
+#@onready var level_timer: Control = $Camera2D/window/LevelTimer
+@onready var step_tracker: Control = $Camera2D/window/StepLabel
 
 func _physics_process(delta):
 	
@@ -83,18 +84,24 @@ func stop_move():
 	moving = false
 	
 func level_ends():
-	var m = int (level_timer.total_time_seconds / 60)
-	var s = level_timer.total_time_seconds - m * 60
-	$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
-	if level_timer.total_time_seconds > 20:
+	#var m = int (level_timer.total_time_seconds / 60)
+	#var s = level_timer.total_time_seconds - m * 60
+	#$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
+	var steps = MoveCounter._get_steps()
+	LevelManager._save_steps(steps)
+	$Camera2D/Level_End/timelabel.text = str(steps) + " Steps!"
+	#if level_timer.total_time_seconds > 20:
+	if steps > 40:
 		star_1.texture = preload("res://assets/empty_star.png")
 		star_2.texture = preload("res://assets/empty_star.png")
 		star_3.texture = preload("res://assets/empty_star.png")
-	elif level_timer.total_time_seconds > 10:
+	#elif level_timer.total_time_seconds > 10:
+	elif steps > 20:
 		star_1.texture = preload("res://assets/full_star.png")
 		star_2.texture = preload("res://assets/empty_star.png")
 		star_3.texture = preload("res://assets/empty_star.png")
-	elif level_timer.total_time_seconds > 5:
+	#elif level_timer.total_time_seconds > 5:
+	elif steps > 15:
 		star_1.texture = preload("res://assets/full_star.png")
 		star_2.texture = preload("res://assets/full_star.png")
 		star_3.texture = preload("res://assets/empty_star.png")

@@ -83,6 +83,7 @@ script = ExtResource("6_6oj22")
 [node name="window" parent="CharacterBody2D/Camera2D" unique_id=1719022226 instance=ExtResource("6_368s2")]
 
 [node name="LevelTimer" parent="CharacterBody2D/Camera2D/window" unique_id=1355431833 instance=ExtResource("8_nsmht")]
+visible = false
 offset_left = -1128.0
 offset_top = -628.0
 offset_right = -1128.0

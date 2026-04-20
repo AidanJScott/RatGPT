@@ -11,6 +11,13 @@ const SAVE_GAME_PATH:= "user://savegame.tres"
 @export var level2_highScore: String = "00m:00s"
 @export var level3_highScore: String = "00m:00s"
 
+@export var levels_step: Array[int] = [
+	0,
+	0,
+	0,
+	0
+]
+
 @export var levels_beenCompleted: Array[bool] = [
 	false,
 	false,
@@ -37,6 +44,13 @@ func reset_save_progress():
 		false,
 		false,
 		false
+	]
+	
+	levels_step = [
+		0,
+		0,
+		0,
+		0
 	]
 	
 	LevelManager.level_unlocked = 1
