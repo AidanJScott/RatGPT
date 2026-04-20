@@ -2,6 +2,46 @@
 
 [ext_resource type="PackedScene" uid="uid://buh4rhiuhohri" path="res://scenes/maze.tscn" id="1_tlvj4"]
 [ext_resource type="PackedScene" uid="uid://b52xovc3wfrta" path="res://scenes/slider_rat.tscn" id="2_tlvj4"]
+[ext_resource type="Texture2D" uid="uid://q3gyw8gu822o" path="res://assets/window/Tutorial2.png" id="3_5u8o6"]
+[ext_resource type="Script" uid="uid://dwx17hil8ljn5" path="res://scripts/tutorial_screen.gd" id="4_qlf6b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ju3oa"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m8fj"]
+bg_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iml60"]
+bg_color = Color(0.796243, 0.796243, 0.796243, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjcgy"]
 
 [node name="game" type="Node2D" unique_id=247817068]
 
@@ -30,6 +70,35 @@ visible = false
 
 [node name="line8" parent="rat/CharacterBody2D/Camera2D/window/editor/Net_Example" parent_id_path=PackedInt32Array(1987628345, 116094382, 1472075260, 732455424) index="14" unique_id=2080053933]
 visible = false
+
+[node name="tutorial_screen" type="Sprite2D" parent="rat/CharacterBody2D/Camera2D/window" parent_id_path=PackedInt32Array(1987628345, 116094382) index="7" unique_id=71727933]
+position = Vector2(-7.000122, 3)
+scale = Vector2(2.01, 2.01)
+texture = ExtResource("3_5u8o6")
+script = ExtResource("4_qlf6b")
+
+[node name="continue" type="Button" parent="rat/CharacterBody2D/Camera2D/window/tutorial_screen" unique_id=2083806452]
+visible = false
+offset_left = -92.0398
+offset_top = 112.93529
+offset_right = 91.9602
+offset_bottom = 187.24376
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ju3oa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6m8fj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iml60")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ju3oa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pjcgy")
+text = "Continue to Game
+"
+
+[connection signal="pressed" from="rat/CharacterBody2D/Camera2D/window/tutorial_screen/continue" to="rat/CharacterBody2D/Camera2D/window/tutorial_screen" method="_on_continue_pressed"]
 
 [editable path="maze"]
 [editable path="rat"]
