@@ -29,6 +29,7 @@ LevelManager="*res://scripts/level_manager.gd"
 EventBus="*res://scripts/EventBus.gd"
 GlobalEnvironment="*res://scenes/GlobalEnvironment.tscn"
 MenuMusic="*uid://bs0h5kmcosjok"
+MoveCounter="*uid://gmy1uk2jnbwe"
 
 [display]
 

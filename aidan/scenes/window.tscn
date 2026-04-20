@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3hmsuvqi2evw"]
+[gd_scene format=3 uid="uid://3hmsuvqi2evw"]
 
 [ext_resource type="Script" uid="uid://dqquryc2ww3os" path="res://aidan/scripts/window.gd" id="1_8xjrb"]
 [ext_resource type="Texture2D" uid="uid://b84yxu7h1p5ta" path="res://aidan/assets/window/frame.png" id="1_oya5r"]
@@ -46,28 +46,28 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rqd1g"]
 
-[node name="window" type="Node2D"]
+[node name="window" type="Node2D" unique_id=1065677856]
 script = ExtResource("1_8xjrb")
 
-[node name="frame" type="Sprite2D" parent="."]
+[node name="frame" type="Sprite2D" parent="." unique_id=53404686]
 scale = Vector2(2, 2)
 texture = ExtResource("1_oya5r")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=961021068]
 offset_left = 522.0
 offset_top = -562.0
 offset_right = 1052.0
 offset_bottom = 570.0
 theme = SubResource("Theme_oya5r")
 
-[node name="run_button" type="Sprite2D" parent="."]
+[node name="run_button" type="Sprite2D" parent="." unique_id=340260853]
 position = Vector2(4, 535)
 scale = Vector2(2, 2)
 texture = ExtResource("3_qvkcj")
 
-[node name="editor" parent="." instance=ExtResource("2_po37e")]
+[node name="editor" parent="." unique_id=1178399630 instance=ExtResource("2_po37e")]
 
-[node name="pause" type="Button" parent="."]
+[node name="pause" type="Button" parent="." unique_id=1309243501]
 offset_left = 1036.0
 offset_top = -629.0
 offset_right = 1131.0
@@ -87,11 +87,22 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wf6yl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rqd1g")
 text = "Pause"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1075248538]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_po37e")]
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1575788414 instance=ExtResource("5_po37e")]
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="StepLabel" type="Label" parent="." unique_id=363272647]
+offset_left = 731.0
+offset_top = -635.0
+offset_right = 867.0
+offset_bottom = -580.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Steps: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
