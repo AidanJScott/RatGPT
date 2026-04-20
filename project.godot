@@ -30,6 +30,7 @@ EventBus="*res://scripts/EventBus.gd"
 GlobalEnvironment="*res://scenes/GlobalEnvironment.tscn"
 MenuMusic="*uid://bs0h5kmcosjok"
 MoveCounter="*uid://gmy1uk2jnbwe"
+MovementManager="*uid://od3e6yms63da"
 
 [display]
 
