@@ -3,11 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://cy0mn7a48o2jd" path="res://aidan/assets/window/editor.png" id="1_1kovi"]
 [ext_resource type="PackedScene" uid="uid://g0uq1cgqxw6n" path="res://aidan/scenes/up_block.tscn" id="1_ga22n"]
 [ext_resource type="Texture2D" uid="uid://cmfs4v7yintbm" path="res://aidan/assets/window/selector.png" id="2_ga22n"]
+[ext_resource type="Texture2D" uid="uid://l07jpyclhcja" path="res://assets/editor/clear_button.png" id="3_7qbci"]
 [ext_resource type="PackedScene" uid="uid://ckbif4kq6d7hb" path="res://aidan/scenes/empty_block.tscn" id="4_o3cbh"]
+[ext_resource type="Script" uid="uid://cxesa4ln0di2j" path="res://scripts/clear_button.gd" id="4_yml1p"]
 [ext_resource type="PackedScene" uid="uid://dvq68afx8lhlr" path="res://aidan/scenes/down_block.tscn" id="5_1pjry"]
 [ext_resource type="PackedScene" uid="uid://c6miwy0vajrvv" path="res://aidan/scenes/right_block.tscn" id="6_mkcea"]
 [ext_resource type="Script" uid="uid://cpitcy7tmlo2e" path="res://scripts/command_blocks.gd" id="7_7qtpy"]
 [ext_resource type="PackedScene" uid="uid://c8rffbyjlvyer" path="res://aidan/scenes/left_block.tscn" id="7_udsln"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1thsx"]
 
 [node name="editor" type="Node2D" unique_id=1472075260]
 
@@ -27,6 +31,16 @@ polygon = PackedVector2Array(546, 291, 1027, 291, 1026, 541, 543, 544)
 [node name="instructions_background" type="Polygon2D" parent="." unique_id=2031185310]
 position = Vector2(4, -673)
 polygon = PackedVector2Array(546, 291, 1027, 291, 1014, 595, 542, 577)
+
+[node name="clear_button" type="Button" parent="." unique_id=1940019313]
+offset_left = 961.99994
+offset_top = -452.00003
+offset_right = 1090.0
+offset_bottom = -324.00003
+scale = Vector2(0.51801103, 0.55237865)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1thsx")
+icon = ExtResource("3_7qbci")
+script = ExtResource("4_yml1p")
 
 [node name="up_block" parent="." unique_id=245514825 instance=ExtResource("1_ga22n")]
 offset_left = 569.0
@@ -65,3 +79,6 @@ offset_left = 578.0
 offset_top = -384.0
 offset_right = 770.0
 offset_bottom = -336.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="clear_button" to="clear_button" method="_on_pressed"]

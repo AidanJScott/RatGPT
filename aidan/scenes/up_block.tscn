@@ -9,8 +9,10 @@ shadow_color = Color(0.9262248, 0.92622477, 0.92622477, 0)
 
 [node name="up_block" type="TextureRect" unique_id=245514825]
 custom_minimum_size = Vector2(192, 48)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -96.0
+offset_top = -24.0
+offset_right = 96.0
+offset_bottom = 24.0
 texture = ExtResource("1_15mic")
 expand_mode = 1
 script = ExtResource("2_v6qbo")

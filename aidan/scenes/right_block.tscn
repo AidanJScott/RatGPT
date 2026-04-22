@@ -9,8 +9,10 @@ shadow_color = Color(0.9262248, 0.92622477, 0.92622477, 0)
 
 [node name="right_block" type="TextureRect" unique_id=245514825]
 custom_minimum_size = Vector2(192, 48)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -86.0
+offset_top = -22.0
+offset_right = 106.0
+offset_bottom = 26.0
 texture = ExtResource("1_clul6")
 expand_mode = 1
 script = ExtResource("2_mdl8g")
