@@ -38,7 +38,7 @@ func _drop_data(_pos, data):
 	# clone node
 	var clone = preload("res://aidan/scenes/empty_block.tscn").instantiate()
 	get_parent().add_child(clone)
-	clone.position = position + Vector2(0, 48)
+	clone.layout_mode = 2
 	
 	
 	# remove current border

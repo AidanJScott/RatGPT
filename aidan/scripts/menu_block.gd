@@ -17,7 +17,7 @@ func _get_drag_data(at_position):
 	return preview_texture.texture
 
 func _can_drop_data(_pos, data):
-	return data is Texture2D
+	return false
 
 func _drop_data(_pos, data):
 	texture = data
