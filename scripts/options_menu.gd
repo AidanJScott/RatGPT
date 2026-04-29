@@ -2,6 +2,10 @@ extends Control
 
 func _ready():
 	$HBoxContainer/Visual/Settings/ColourBlindDropdown.selected = LevelManager._get_colorblind()
+	var brightness = GlobalEnvironment.environment.adjustment_brightness
+	$HBoxContainer/Visual/Settings/BrightnessSlider.value = brightness
+	if get_parent().name == "PauseMenu":
+		modulate = Color(brightness, brightness, brightness, 1.0)
 
 func _on_back_pressed() -> void:
 	# Return to MM if parent isn't pause menu, otherwise yield back to pause menu
@@ -35,6 +39,11 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 
 func _on_brightness_slider_value_changed(value: float) -> void:
 	GlobalEnvironment.environment.adjustment_brightness = value
+	for node in get_tree().get_nodes_in_group("world_environment"):
+		node.environment.adjustment_enabled = true
+		node.environment.adjustment_brightness = value
+	if get_parent().name == "PauseMenu":
+		modulate = Color(value, value, value, 1.0)
 
 
 func _on_colour_blind_dropdown_item_selected(index: int) -> void:

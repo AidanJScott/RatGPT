@@ -2,6 +2,7 @@ extends Node
 @onready var character_body_2d: CharacterBody2D = $CharacterBody2D
 
 var command_list = []
+var is_running = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

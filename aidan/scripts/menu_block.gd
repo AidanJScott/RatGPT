@@ -2,6 +2,8 @@ extends TextureRect
 
 
 func _get_drag_data(at_position):
+	if MovementManager.is_running:
+		return null
 	var preview_texture = TextureRect.new()
 	preview_texture.position -= get_rect().size/2
 	preview_texture.texture = texture

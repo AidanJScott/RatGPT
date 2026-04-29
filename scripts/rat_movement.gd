@@ -14,9 +14,11 @@ var command_list = []
 @onready var level_end: Control = %Level_End
 #@onready var level_timer: Control = $Camera2D/window/LevelTimer
 @onready var step_tracker: Control = $Camera2D/window/StepLabel
+@onready var run_button: Button = $Camera2D/window/Button
+@onready var clear_button: Button = $Camera2D/window/editor/clear_button
 
 func _physics_process(delta):
-	
+
 	command_list = MovementManager.command_list
 
 	
@@ -31,13 +33,17 @@ func _physics_process(delta):
 			stop_move()
 
 func execute_movement():
+	run_button.disabled = true
+	MovementManager.is_running = true
 	for command in command_list:
 		if command == "":
 			pass
 		else:
 			move(command)
 			await get_tree().create_timer(0.5).timeout
-	return
+	MovementManager.is_running = false
+	run_button.disabled = false
+	clear_button._on_pressed()
 
 func move(direction: String):
 	if direction == "up":
