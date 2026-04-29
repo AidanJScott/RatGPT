@@ -66,19 +66,18 @@ offset_top = 327.0
 offset_right = 983.0
 offset_bottom = 375.0
 
-[node name="command_blocks" type="Control" parent="." unique_id=660136677]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("7_7qtpy")
-
-[node name="empty_block" parent="command_blocks" unique_id=74583904 instance=ExtResource("4_o3cbh")]
-layout_mode = 0
+[node name="block_scroll" type="ScrollContainer" parent="." unique_id=123456789]
 offset_left = 578.0
 offset_top = -384.0
 offset_right = 770.0
-offset_bottom = -336.0
-metadata/_edit_use_anchors_ = true
+offset_bottom = 265.0
+
+[node name="command_blocks" type="VBoxContainer" parent="block_scroll" unique_id=660136677]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("7_7qtpy")
+
+[node name="empty_block" parent="block_scroll/command_blocks" unique_id=74583904 instance=ExtResource("4_o3cbh")]
+layout_mode = 2
 
 [connection signal="pressed" from="clear_button" to="clear_button" method="_on_pressed"]

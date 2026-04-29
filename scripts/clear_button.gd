@@ -1,6 +1,6 @@
 extends Button
-@onready var empty_block: TextureRect = $"../command_blocks/empty_block"
-@onready var command_blocks: Control = $"../command_blocks"
+@onready var empty_block: TextureRect = $"../block_scroll/command_blocks/empty_block"
+@onready var command_blocks: Control = $"../block_scroll/command_blocks"
 var reset_empty_block
 
 # Called when the node enters the scene tree for the first time.

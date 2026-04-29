@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://3l1dhxt8kdwy" path="res://aidan/assets/rat/uprat.png" id="5_hbnxy"]
 [ext_resource type="Script" uid="uid://cpg0un8kfa21r" path="res://aidan/scripts/camera_2d.gd" id="6_uvibj"]
 [ext_resource type="PackedScene" uid="uid://bm8sdfbww3mpr" path="res://scenes/UI/slider_window.tscn" id="7_b8t8v"]
-[ext_resource type="PackedScene" uid="uid://dk2mphmi52rfr" path="res://scenes/UI/level_timer.tscn" id="8_dgms3"]
 [ext_resource type="Script" uid="uid://whamkyofa0bd" path="res://scripts/level_end.gd" id="9_1krls"]
 [ext_resource type="Texture2D" uid="uid://dwo4r500wdi17" path="res://assets/full_star.png" id="10_yw2kx"]
 
@@ -79,13 +78,6 @@ zoom = Vector2(0.5, 0.5)
 script = ExtResource("6_uvibj")
 
 [node name="window" parent="CharacterBody2D/Camera2D" unique_id=116094382 instance=ExtResource("7_b8t8v")]
-
-[node name="LevelTimer" parent="CharacterBody2D/Camera2D/window" unique_id=951175065 instance=ExtResource("8_dgms3")]
-unique_name_in_owner = true
-offset_left = -1125.0
-offset_top = -629.0
-offset_right = -1125.0
-offset_bottom = -629.0
 
 [node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=261956551]
 unique_name_in_owner = true
@@ -165,4 +157,3 @@ text = "00:00"
 
 [editable path="CharacterBody2D/Camera2D/window"]
 [editable path="CharacterBody2D/Camera2D/window/editor"]
-[editable path="CharacterBody2D/Camera2D/window/LevelTimer"]
