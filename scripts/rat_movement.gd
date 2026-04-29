@@ -19,15 +19,7 @@ func _physics_process(delta):
 	
 	command_list = MovementManager.command_list
 
-	if not moving:
-		if Input.is_action_just_pressed("up"):
-			try_start_move(Vector2.UP)
-		elif Input.is_action_just_pressed("down"):
-			try_start_move(Vector2.DOWN)
-		elif Input.is_action_just_pressed("left"):
-			try_start_move(Vector2.LEFT)
-		elif Input.is_action_just_pressed("right"):
-			try_start_move(Vector2.RIGHT)
+	
 
 	if moving:
 		velocity = move_direction * SPEED

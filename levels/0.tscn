@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b5yexprdtwtqk" path="res://aidan/scenes/rat.tscn" id="2_op5ms"]
 [ext_resource type="Texture2D" uid="uid://cfjwkrvms0l7s" path="res://assets/window/Tutorial RatGPT.png" id="3_op5ms"]
 [ext_resource type="Script" uid="uid://dtur0fcl1bdup" path="res://scripts/tutorial_screen2.gd" id="4_ej0t8"]
+[ext_resource type="PackedScene" uid="uid://j4aepd0r7dds" path="res://scenes/story/story_0.tscn" id="5_fb2oa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb2oa"]
 bg_color = Color(1, 1, 1, 1)
@@ -50,6 +51,12 @@ corner_radius_bottom_left = 16
 [node name="rat" parent="." unique_id=1920034485 instance=ExtResource("2_op5ms")]
 position = Vector2(182, 1020)
 
+[node name="block_clicks" type="Panel" parent="." unique_id=2028584877]
+offset_left = -1076.0
+offset_top = -719.0
+offset_right = 3005.0
+offset_bottom = 1806.0
+
 [node name="tutorial_screen" type="Sprite2D" parent="." unique_id=1365690148]
 position = Vector2(174, 1016)
 scale = Vector2(2.01, 2.01)
@@ -76,5 +83,9 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fb2oa")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_55e3l")
 text = "Continue to Game
 "
+
+[node name="story_0" parent="." unique_id=63188110 instance=ExtResource("5_fb2oa")]
+position = Vector2(3.0517578e-05, 0.00012207031)
+scale = Vector2(0.9999999, 0.9999999)
 
 [connection signal="pressed" from="tutorial_screen/continue" to="tutorial_screen" method="_on_continue_pressed"]
