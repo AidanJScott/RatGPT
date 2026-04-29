@@ -1,18 +1,19 @@
-[gd_scene format=3 uid="uid://j4aepd0r7dds"]
+[gd_scene format=3 uid="uid://bpehye0xtvdg3"]
 
-[ext_resource type="Texture2D" uid="uid://bu4b320727g4d" path="res://assets/story/rat_image.png" id="1_v8tuw"]
-[ext_resource type="Texture2D" uid="uid://cwvu5lnrxvxqv" path="res://assets/story/rat_image_arrows.png" id="2_11jah"]
-[ext_resource type="Texture2D" uid="uid://cbwah13p3lsgq" path="res://assets/story/dr_cheese_text_box.png" id="3_eadf7"]
-[ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="3_u4ij4"]
-[ext_resource type="Script" uid="uid://bphwcg0hgi4u3" path="res://scripts/story/dialogue_box_0.gd" id="4_eadf7"]
-[ext_resource type="Texture2D" uid="uid://c8emaepbijjhn" path="res://assets/story/continue_button.png" id="5_u4ij4"]
+[ext_resource type="Texture2D" uid="uid://bu4b320727g4d" path="res://assets/story/rat_image.png" id="1_ishir"]
+[ext_resource type="Texture2D" uid="uid://dundxhgmkieyo" path="res://assets/story/chart.png" id="3_421vg"]
+[ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="3_fvyeq"]
+[ext_resource type="Texture2D" uid="uid://c758fxoufdjcg" path="res://assets/story/weights.png" id="4_fvyeq"]
+[ext_resource type="Texture2D" uid="uid://cbwah13p3lsgq" path="res://assets/story/dr_cheese_text_box.png" id="4_svids"]
+[ext_resource type="Script" uid="uid://cpnetmt8hu0ka" path="res://scripts/story/dialogue_box_2.gd" id="5_ishir"]
+[ext_resource type="Texture2D" uid="uid://c8emaepbijjhn" path="res://assets/story/continue_button.png" id="6_2qpqm"]
 
 [sub_resource type="Theme" id="Theme_sdxk0"]
 default_font_size = 48
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx3qu"]
 
-[node name="story_0" type="Node2D" unique_id=63188110]
+[node name="story_2" type="Node2D" unique_id=63188110]
 
 [node name="background" type="Polygon2D" parent="." unique_id=262294945]
 polygon = PackedVector2Array(-973, 375, -973, 375, 1320, 375, 1327, 1672, -973, 1659)
@@ -20,24 +21,29 @@ polygon = PackedVector2Array(-973, 375, -973, 375, 1320, 375, 1327, 1672, -973, 
 [node name="rat_image" type="Sprite2D" parent="background" unique_id=1342678718]
 position = Vector2(138, 824)
 scale = Vector2(1.495, 1.495)
-texture = ExtResource("1_v8tuw")
-
-[node name="rat_image_arrows" type="Sprite2D" parent="background" unique_id=668637804]
-visible = false
-position = Vector2(138, 824)
-scale = Vector2(1.495, 1.495)
-texture = ExtResource("2_11jah")
+texture = ExtResource("1_ishir")
 
 [node name="cheese" type="Sprite2D" parent="background" unique_id=1535699102]
-visible = false
 position = Vector2(392, 1072)
 scale = Vector2(0.13, 0.13)
-texture = ExtResource("3_u4ij4")
+texture = ExtResource("3_fvyeq")
+
+[node name="chart" type="Sprite2D" parent="background" unique_id=1916461524]
+visible = false
+position = Vector2(857, 848.00006)
+scale = Vector2(2.2794118, 2.239726)
+texture = ExtResource("3_421vg")
+
+[node name="weights" type="Sprite2D" parent="background" unique_id=1949488733]
+visible = false
+position = Vector2(-568.99994, 852.99994)
+scale = Vector2(2.5441177, 2.5437956)
+texture = ExtResource("4_fvyeq")
 
 [node name="dr_cheese" type="Sprite2D" parent="." unique_id=2089807777]
 position = Vector2(174, 1015)
 scale = Vector2(2, 2)
-texture = ExtResource("3_eadf7")
+texture = ExtResource("4_svids")
 offset = Vector2(-7, 0)
 
 [node name="arrow" type="Polygon2D" parent="dr_cheese" unique_id=421164542]
@@ -51,7 +57,7 @@ offset_left = -813.0
 offset_top = 1260.0
 offset_right = 532.0
 offset_bottom = 1572.0
-script = ExtResource("4_eadf7")
+script = ExtResource("5_ishir")
 
 [node name="vbox_text" type="VBoxContainer" parent="dialogue_box" unique_id=2048770449]
 layout_mode = 1
@@ -83,6 +89,6 @@ offset_bottom = 4.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_wx3qu")
-icon = ExtResource("5_u4ij4")
+icon = ExtResource("6_2qpqm")
 
 [connection signal="pressed" from="dialogue_box/continue_button" to="dialogue_box" method="_on_continue_button_pressed"]
