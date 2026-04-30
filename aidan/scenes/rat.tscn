@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://by1251nmdtpes" path="res://assets/window/runbutton.png" id="9_y8y73"]
 [ext_resource type="Texture2D" uid="uid://dwo4r500wdi17" path="res://assets/full_star.png" id="10_3242j"]
 [ext_resource type="Script" uid="uid://d21grgmh7p1wm" path="res://scripts/run_button.gd" id="10_y8y73"]
+[ext_resource type="Script" uid="uid://bw18u4difanao" path="res://scripts/instruction_arrow.gd" id="11_q8ajf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_po2hf"]
 animations = [{
@@ -98,6 +99,13 @@ scale = Vector2(1.6332526, 1.5523576)
 icon = ExtResource("9_y8y73")
 script = ExtResource("10_y8y73")
 
+[node name="instruction_arrow" type="Polygon2D" parent="CharacterBody2D/Camera2D/window" unique_id=991541773]
+visible = false
+position = Vector2(6, 2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(532, -373, 532, -343, 565, -360)
+script = ExtResource("11_q8ajf")
+
 [node name="Level_End" type="Control" parent="CharacterBody2D/Camera2D" unique_id=1031122849]
 unique_name_in_owner = true
 visible = false
@@ -172,4 +180,5 @@ theme_override_font_sizes/font_size = 194
 text = "00:00"
 
 [connection signal="pressed" from="CharacterBody2D/Camera2D/window/Button" to="CharacterBody2D" method="execute_movement"]
+[connection signal="pressed" from="CharacterBody2D/Camera2D/window/Button" to="CharacterBody2D/Camera2D/window/instruction_arrow" method="_on_button_pressed"]
 [connection signal="pressed" from="CharacterBody2D/Camera2D/Level_End/Button" to="CharacterBody2D/Camera2D/Level_End" method="_on_button_pressed"]

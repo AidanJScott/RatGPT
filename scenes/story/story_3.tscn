@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://4vec02e3rw38"]
 
 [ext_resource type="Texture2D" uid="uid://bu4b320727g4d" path="res://assets/story/rat_image.png" id="1_3vpfd"]
-[ext_resource type="Texture2D" uid="uid://cwvu5lnrxvxqv" path="res://assets/story/rat_image_arrows.png" id="2_0xvhp"]
+[ext_resource type="Texture2D" uid="uid://dundxhgmkieyo" path="res://assets/story/chart.png" id="3_0xvhp"]
 [ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="3_g85pa"]
+[ext_resource type="Texture2D" uid="uid://c758fxoufdjcg" path="res://assets/story/weights.png" id="4_g85pa"]
 [ext_resource type="Texture2D" uid="uid://cbwah13p3lsgq" path="res://assets/story/dr_cheese_text_box.png" id="4_v50f5"]
-[ext_resource type="Script" uid="uid://dfx1jpttbxbcr" path="res://scripts/story/dialogue_box_1.gd" id="5_qv2nh"]
+[ext_resource type="Texture2D" uid="uid://btpxpih7c66qn" path="res://assets/story/charts_2.png" id="5_v50f5"]
+[ext_resource type="Script" uid="uid://c0sb0rfpuq3pn" path="res://scripts/story/dialogue_box_3.gd" id="6_0xvhp"]
 [ext_resource type="Texture2D" uid="uid://c8emaepbijjhn" path="res://assets/story/continue_button.png" id="6_qef54"]
+[ext_resource type="Texture2D" uid="uid://c6u1yctt88r44" path="res://assets/story/weights_2.png" id="6_qv2nh"]
 
 [sub_resource type="Theme" id="Theme_sdxk0"]
 default_font_size = 48
@@ -22,15 +25,32 @@ position = Vector2(138, 824)
 scale = Vector2(1.495, 1.495)
 texture = ExtResource("1_3vpfd")
 
-[node name="rat_image_arrows" type="Sprite2D" parent="background" unique_id=668637804]
-position = Vector2(138, 824)
-scale = Vector2(1.495, 1.495)
-texture = ExtResource("2_0xvhp")
-
 [node name="cheese" type="Sprite2D" parent="background" unique_id=1535699102]
 position = Vector2(392, 1072)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("3_g85pa")
+
+[node name="chart" type="Sprite2D" parent="background" unique_id=1916461524]
+position = Vector2(857, 848.00006)
+scale = Vector2(2.2794118, 2.239726)
+texture = ExtResource("3_0xvhp")
+
+[node name="weights" type="Sprite2D" parent="background" unique_id=1949488733]
+position = Vector2(-568.99994, 852.99994)
+scale = Vector2(2.5441177, 2.5437956)
+texture = ExtResource("4_g85pa")
+
+[node name="chart2" type="Sprite2D" parent="background" unique_id=1188726771]
+visible = false
+position = Vector2(857, 848.00006)
+scale = Vector2(2.2794118, 2.239726)
+texture = ExtResource("5_v50f5")
+
+[node name="weights2" type="Sprite2D" parent="background" unique_id=237679586]
+visible = false
+position = Vector2(-568.99994, 785.99994)
+scale = Vector2(2.5441177, 2.5437956)
+texture = ExtResource("6_qv2nh")
 
 [node name="dr_cheese" type="Sprite2D" parent="." unique_id=2089807777]
 position = Vector2(174, 1015)
@@ -49,7 +69,7 @@ offset_left = -813.0
 offset_top = 1260.0
 offset_right = 532.0
 offset_bottom = 1572.0
-script = ExtResource("5_qv2nh")
+script = ExtResource("6_0xvhp")
 
 [node name="vbox_text" type="VBoxContainer" parent="dialogue_box" unique_id=2048770449]
 layout_mode = 1

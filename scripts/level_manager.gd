@@ -21,7 +21,8 @@ func _load_level(level_to_load: int) -> void:
 	current_level = level_to_load
 	MoveCounter.reset_steps()
 	if level_to_load > max_level:
-		return #credits/thanks for playing should go here
+		get_tree().call_deferred("change_scene_to_file", str("res://levels/", max_level, ".tscn"))
+		return
 	get_tree().call_deferred("change_scene_to_file", str("res://levels/", level_to_load, ".tscn"))
 
 

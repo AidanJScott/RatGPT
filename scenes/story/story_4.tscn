@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://d3c03l5xuod84"]
 
-[ext_resource type="Texture2D" uid="uid://bu4b320727g4d" path="res://assets/story/rat_image.png" id="1_4gwi8"]
-[ext_resource type="Texture2D" uid="uid://cwvu5lnrxvxqv" path="res://assets/story/rat_image_arrows.png" id="2_ihn1u"]
-[ext_resource type="Texture2D" uid="uid://bp41q11o4kjq1" path="res://assets/cheese.png" id="3_4folu"]
-[ext_resource type="Texture2D" uid="uid://cbwah13p3lsgq" path="res://assets/story/dr_cheese_text_box.png" id="4_s8rym"]
-[ext_resource type="Script" uid="uid://dfx1jpttbxbcr" path="res://scripts/story/dialogue_box_1.gd" id="5_mjdhu"]
+[ext_resource type="Texture2D" uid="uid://cp6skrmxpfl26" path="res://assets/story/rat_image_crown.png" id="1_itanq"]
+[ext_resource type="Texture2D" uid="uid://cul8vviqbs51" path="res://assets/story/happy_dr_cheese_text_box.png" id="2_l7ybx"]
+[ext_resource type="Script" uid="uid://cdq2vclh8p546" path="res://scripts/story/dialogue_box_4.gd" id="3_itanq"]
 [ext_resource type="Texture2D" uid="uid://c8emaepbijjhn" path="res://assets/story/continue_button.png" id="6_8gsou"]
 
 [sub_resource type="Theme" id="Theme_sdxk0"]
@@ -20,22 +18,12 @@ polygon = PackedVector2Array(-973, 375, -973, 375, 1320, 375, 1327, 1672, -973, 
 [node name="rat_image" type="Sprite2D" parent="background" unique_id=1342678718]
 position = Vector2(138, 824)
 scale = Vector2(1.495, 1.495)
-texture = ExtResource("1_4gwi8")
-
-[node name="rat_image_arrows" type="Sprite2D" parent="background" unique_id=668637804]
-position = Vector2(138, 824)
-scale = Vector2(1.495, 1.495)
-texture = ExtResource("2_ihn1u")
-
-[node name="cheese" type="Sprite2D" parent="background" unique_id=1535699102]
-position = Vector2(392, 1072)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("3_4folu")
+texture = ExtResource("1_itanq")
 
 [node name="dr_cheese" type="Sprite2D" parent="." unique_id=2089807777]
 position = Vector2(174, 1015)
 scale = Vector2(2, 2)
-texture = ExtResource("4_s8rym")
+texture = ExtResource("2_l7ybx")
 offset = Vector2(-7, 0)
 
 [node name="arrow" type="Polygon2D" parent="dr_cheese" unique_id=421164542]
@@ -49,7 +37,7 @@ offset_left = -813.0
 offset_top = 1260.0
 offset_right = 532.0
 offset_bottom = 1572.0
-script = ExtResource("5_mjdhu")
+script = ExtResource("3_itanq")
 
 [node name="vbox_text" type="VBoxContainer" parent="dialogue_box" unique_id=2048770449]
 layout_mode = 1

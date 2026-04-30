@@ -76,22 +76,43 @@ func level_ends():
 	#var m = int (level_timer.total_time_seconds / 60)
 	#var s = level_timer.total_time_seconds - m * 60
 	#$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
-	if steps_made > 30:
-		star_1.texture = preload("res://assets/empty_star.png")
-		star_2.texture = preload("res://assets/empty_star.png")
-		star_3.texture = preload("res://assets/empty_star.png")
-	elif steps_made > 25:
-		star_1.texture = preload("res://assets/full_star.png")
-		star_2.texture = preload("res://assets/empty_star.png")
-		star_3.texture = preload("res://assets/empty_star.png")
-	elif steps_made > 20:
-		star_1.texture = preload("res://assets/full_star.png")
-		star_2.texture = preload("res://assets/full_star.png")
-		star_3.texture = preload("res://assets/empty_star.png")
-	else:
-		star_1.texture = preload("res://assets/full_star.png")
-		star_2.texture = preload("res://assets/full_star.png")
-		star_3.texture = preload("res://assets/full_star.png")
+	var current_level = LevelManager.current_level
+	
+	match current_level:
+		2:
+			if steps_made > 30:
+				star_1.texture = preload("res://assets/empty_star.png")
+				star_2.texture = preload("res://assets/empty_star.png")
+				star_3.texture = preload("res://assets/empty_star.png")
+			elif steps_made > 25:
+				star_1.texture = preload("res://assets/full_star.png")
+				star_2.texture = preload("res://assets/empty_star.png")
+				star_3.texture = preload("res://assets/empty_star.png")
+			elif steps_made > 20:
+				star_1.texture = preload("res://assets/full_star.png")
+				star_2.texture = preload("res://assets/full_star.png")
+				star_3.texture = preload("res://assets/empty_star.png")
+			else:
+				star_1.texture = preload("res://assets/full_star.png")
+				star_2.texture = preload("res://assets/full_star.png")
+				star_3.texture = preload("res://assets/full_star.png")
+		3:
+			if steps_made > 100:
+				star_1.texture = preload("res://assets/empty_star.png")
+				star_2.texture = preload("res://assets/empty_star.png")
+				star_3.texture = preload("res://assets/empty_star.png")
+			elif steps_made > 60:
+				star_1.texture = preload("res://assets/full_star.png")
+				star_2.texture = preload("res://assets/empty_star.png")
+				star_3.texture = preload("res://assets/empty_star.png")
+			elif steps_made > 35:
+				star_1.texture = preload("res://assets/full_star.png")
+				star_2.texture = preload("res://assets/full_star.png")
+				star_3.texture = preload("res://assets/empty_star.png")
+			else:
+				star_1.texture = preload("res://assets/full_star.png")
+				star_2.texture = preload("res://assets/full_star.png")
+				star_3.texture = preload("res://assets/full_star.png")
 	level_end.visible = true
 
 

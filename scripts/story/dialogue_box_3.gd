@@ -3,10 +3,12 @@ extends Control
 @onready var continue_button: Button = $continue_button
 @onready var rat_image_arrows: Sprite2D = $"../background/rat_image_arrows"
 @onready var story_0: Node2D = $".."
-@onready var cheese: Sprite2D = $"../background/cheese"
+@onready var chart_2: Sprite2D = $"../background/chart2"
+@onready var weights_2: Sprite2D = $"../background/weights2"
 
-var dialogue = 		["Great job getting the hang of it...", 
-					"I'd like you to try something a bit more difficult...",]
+var dialogue = 		["See? Not too hard...", 
+					"Here's that bigger maze again...\nThis one may be a bit difficult...",
+					"I gave you two more options to work with...\nSo have fun!"]
 var current_line = 0
 
 func _ready() -> void:
@@ -15,7 +17,9 @@ func _ready() -> void:
 func display_line(line: String):
 	text.text = line
 	continue_button.grab_focus()
-	
+	if current_line == 2:
+		chart_2.show()
+		weights_2.show()
 	
 
 func _on_continue_button_pressed() -> void:

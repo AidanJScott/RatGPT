@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://baroup73vwlcc"]
+
+[ext_resource type="PackedScene" uid="uid://d3c03l5xuod84" path="res://scenes/story/story_4.tscn" id="1_ae2nu"]
+
+[node name="4" type="Node2D" unique_id=492902696]
+
+[node name="story_4" parent="." unique_id=63188110 instance=ExtResource("1_ae2nu")]
+position = Vector2(489, -186)
+scale = Vector2(0.505, 0.505)
