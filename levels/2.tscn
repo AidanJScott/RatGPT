@@ -110,4 +110,3 @@ position = Vector2(-111, -123)
 [editable path="rat"]
 [editable path="rat/CharacterBody2D/Camera2D/window"]
 [editable path="rat/CharacterBody2D/Camera2D/window/editor"]
-[editable path="rat/CharacterBody2D/Camera2D/window/LevelTimer"]

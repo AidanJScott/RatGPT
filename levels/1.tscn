@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://buh4rhiuhohri" path="res://scenes/maze.tscn" id="1_me8dt"]
 [ext_resource type="PackedScene" uid="uid://b5yexprdtwtqk" path="res://aidan/scenes/rat.tscn" id="2_gafq4"]
-[ext_resource type="PackedScene" path="res://scenes/story/story_1.tscn" id="3_a47pm"]
+[ext_resource type="PackedScene" uid="uid://tkgmf8o37nv" path="res://scenes/story/story_1.tscn" id="3_a47pm"]
 
 [node name="game" type="Node2D" unique_id=870305936]
 
