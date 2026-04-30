@@ -15,9 +15,18 @@ var move_direction = Vector2.ZERO
 @onready var star_1: Sprite2D = $Camera2D/Level_End/star1
 @onready var star_2: Sprite2D = $Camera2D/Level_End/star2
 @onready var star_3: Sprite2D = $Camera2D/Level_End/star3
+@onready var step_label: Label = $Camera2D/window/StepLabel
+@onready var timelabel: Label = $Camera2D/Level_End/timelabel
+var level_over = false
+
+var steps_made = 0
 
 
 func move():
+			if not level_over:
+				steps_made += 1
+			step_label.text = "Steps %d" % steps_made
+			timelabel.text = "%d steps!" % steps_made
 			if right_slider.visible == false || randi_range(0,1) == 0:
 				var rand = randi_range(0,100)
 				if rand < up_slider.value:
@@ -63,18 +72,19 @@ func stop_move():
 	moving = false
 
 func level_ends():
-	var m = int (level_timer.total_time_seconds / 60)
-	var s = level_timer.total_time_seconds - m * 60
-	$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
-	if level_timer.total_time_seconds > 20:
+	level_over = true
+	#var m = int (level_timer.total_time_seconds / 60)
+	#var s = level_timer.total_time_seconds - m * 60
+	#$Camera2D/Level_End/timelabel.text = '%02d:%02d' % [m, s]
+	if steps_made > 30:
 		star_1.texture = preload("res://assets/empty_star.png")
 		star_2.texture = preload("res://assets/empty_star.png")
 		star_3.texture = preload("res://assets/empty_star.png")
-	elif level_timer.total_time_seconds > 10:
+	elif steps_made > 25:
 		star_1.texture = preload("res://assets/full_star.png")
 		star_2.texture = preload("res://assets/empty_star.png")
 		star_3.texture = preload("res://assets/empty_star.png")
-	elif level_timer.total_time_seconds > 5:
+	elif steps_made > 20:
 		star_1.texture = preload("res://assets/full_star.png")
 		star_2.texture = preload("res://assets/full_star.png")
 		star_3.texture = preload("res://assets/empty_star.png")
@@ -86,6 +96,7 @@ func level_ends():
 
 
 func _on_run_button_pressed() -> void:
+	level_over = false
 	move()
 	await get_tree().create_timer(0.5).timeout
 	move()

@@ -70,12 +70,14 @@ visible = false
 visible = false
 
 [node name="block_clicks" type="Panel" parent="rat/CharacterBody2D/Camera2D/window" parent_id_path=PackedInt32Array(1987628345, 116094382) index="7" unique_id=416753375]
+visible = false
 offset_left = -1136.9999
 offset_top = -1618.9999
 offset_right = 2944.0
 offset_bottom = 906.0001
 
 [node name="tutorial_screen" type="Sprite2D" parent="rat/CharacterBody2D/Camera2D/window" parent_id_path=PackedInt32Array(1987628345, 116094382) index="8" unique_id=71727933]
+visible = false
 position = Vector2(-7.000122, 3)
 scale = Vector2(2.01, 2.01)
 texture = ExtResource("3_5u8o6")

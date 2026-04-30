@@ -52,6 +52,7 @@ corner_radius_bottom_left = 16
 position = Vector2(182, 1020)
 
 [node name="block_clicks" type="Panel" parent="." unique_id=2028584877]
+visible = false
 offset_left = -1076.0
 offset_top = -719.0
 offset_right = 3005.0
